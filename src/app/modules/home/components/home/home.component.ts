@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  cvOrder = [];
+
+  constructor(public homeService: HomeService ) { }
+
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.homeService.form.value.cvOrder = this.cvOrder;
+    const data = this.homeService.form.value;
+
+    this.homeService.createCvOrder(data)
+       .then(res => {
+           /*do something here....
+           maybe clear the form or give a success message*/
+       });
+}
 }

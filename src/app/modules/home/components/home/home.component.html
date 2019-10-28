@@ -1,1 +1,27 @@
-<p>home works!</p>
+<form [formGroup]="this.homeService.form">
+  <input placeholder="Name"
+         formControlName="firstName"
+         type="text"
+         class="input-field col s12">
+         <input placeholder="Surname"
+         formControlName="lastName"
+         type="text"
+         class="input-field col s12">
+         <input placeholder="Age"
+         formControlName="age"
+         type="text"
+         class="input-field col s12">
+         <input placeholder="Phone"
+         formControlName="phone"
+         type="text"
+         class="input-field col s12">
+  <input placeholder="Address"
+         formControlName="address"
+         type="text"
+         class="input-field col s12">
+         <button
+       class="waves-effect waves-light btn col s12"
+       (click)="onSubmit()">
+  Submit
+  </button>
+</form>

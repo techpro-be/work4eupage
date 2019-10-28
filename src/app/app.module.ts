@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -8,6 +8,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { HomeModule } from './modules/home/home.module';
+import { SharedModule } from './shared/shared.module';
+import { HomeService } from './modules/home/services/home.service';
 
 
 @NgModule({
@@ -17,12 +19,16 @@ import { HomeModule } from './modules/home/home.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    SharedModule,
     HomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFirestoreModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HomeService],
+  bootstrap: [AppComponent],
+  entryComponents: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
