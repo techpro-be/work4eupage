@@ -11,44 +11,44 @@
           <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="cvForm" (ngSubmit)="onSubmit()">
             <div fxLayout="row" fxLayoutGap="1rem">
               <mat-form-field>
-                <input  matInput placeholder="First name" formControlName="firstName" required />
+                <input type="text" matInput placeholder="First name" formControlName="firstName" required />
                 <mat-error>Name is required.</mat-error>
               </mat-form-field>
 
               <mat-form-field>
-                <input matInput placeholder="Last name" formControlName="lastName" required />
+                <input type="text" matInput placeholder="Last name" formControlName="lastName" required />
                 <mat-error>Surname is required.</mat-error>
               </mat-form-field>
             </div>
 
             <div fxLayout="row" fxLayoutGap="1rem">
               <mat-form-field>
-                <input matInput placeholder="Enter age" formControlName="age" required />
+                <input  type="number" matInput placeholder="Enter age" formControlName="age" required />
                 <mat-error>Age is required.</mat-error>
               </mat-form-field>
 
               <mat-form-field>
-                <input matInput placeholder="Enter phone number" formControlName="phone" required />
+                <input  type="tel" matInput placeholder="Enter phone number" formControlName="phone" required />
                 <mat-error>Phone is required.</mat-error>
               </mat-form-field>
             </div>
 
             <div fxLayout="row" fxLayoutGap="1rem">
             <mat-form-field>
-              <input matInput placeholder="Enter email" formControlName="email" required />
+              <input  type="email" matInput placeholder="Enter email" formControlName="email" required />
               <mat-error>Email is required.</mat-error>
             </mat-form-field>
             </div>
 
             <div fxLayout="row" fxLayoutGap="1rem">
               <mat-form-field>
-                <input matInput placeholder="Enter address" formControlName="address" required />
+                <input  type="text" matInput placeholder="Enter address" formControlName="address" required />
                 <mat-error>
                   Address is required.
                 </mat-error>
               </mat-form-field>
               <mat-form-field>
-                <input matInput placeholder="Enter message" formControlName="message" required />
+                <input type="text" matInput placeholder="Enter message" formControlName="message" required />
                 <mat-error>
                   Message is required.
                 </mat-error>
