@@ -8,8 +8,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { HomeModule } from './modules/home/home.module';
-import { SharedModule } from './shared/shared.module';
 import { HomeService } from './modules/home/services/home.service';
+import { SharedModule } from './shared/modules/shared.module';
 
 
 @NgModule({
