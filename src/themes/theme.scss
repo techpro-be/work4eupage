@@ -8,6 +8,7 @@ body {
   padding: 0px;
   margin: 0px;
   height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .full-width {
@@ -84,28 +85,3 @@ body {
   font-size: 3rem;
 }
 
-// .background-color {
-//   background-image: linear-gradient(
-//     to right bottom,
-//     #2661ae,
-//     #206ab1,
-//     #2173b3,
-//     #277bb4,
-//     #3183b5,
-//     #3789b7,
-//     #3d8fba,
-//     #4495bc,
-//     #459bc1,
-//     #47a1c7,
-//     #48a7cc,
-//     #4aadd1
-//   );
-//   background-position: center;
-//   background-size: cover;
-//   height: 100%;
-// }
-
-.mat-dashboard {
-  font-size: 20px;
-  font-family: sans-serif;
-}

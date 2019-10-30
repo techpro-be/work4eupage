@@ -1,12 +1,32 @@
+
 .htext {
   font-family: Tahoma, Geneva, sans-serif;
 }
 
-.mat-register {
-  border-radius: 10px;
+.mat-form {
+  border-radius: 0px;
   padding: 25px;
 }
 .mat-card {
   background: #ffffff;
   color: rgb(0, 0, 0);
 }
+.footer-class{
+  background: #000000;
+  color: rgb(255, 255, 255);
+}
+
+.padding-ref {
+  padding: 20px;
+}
+.margin-b{
+  margin-bottom: 15px;
+}
+
+.bg-image {
+  background:url(src/assets/images/euflag.jpg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+

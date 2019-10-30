@@ -1,8 +1,28 @@
 
-<div  fxLayout="column" fxLayoutAlign="center center">
+<div class="bg-image margin-b" fxLayoutAlign="center center" >
+
+          <div fxLayout="column"  fxLayoutAlign="center center">
+            <div>
+                   <h1 style="font-size:28px; color:white;">We're Hiring!</h1>
+            </div>
+
+            <div>
+                <p>You have just finished your studies, or you already have IT experience ?
+                  You wanna work for European companies ?
+                  Techpro is a Belgian company specialised in recruiting IT Workforce to
+                  complete the team of European entreprises. Are you attracted by that
+                  kind of challenge ? Click the button to fill in the pre-selection,
+                  and a member of our team will take contact with you shortly.
+                </p>
+            </div>
+  </div>
+</div>
+
+
+<div   fxLayout="column" fxLayoutAlign="center center"  class="padding-ref" >
   <div fxLayout="column">
     <div>
-      <mat-card class="mat-register">
+      <mat-card class="mat-form">
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
           <h3>CV Form</h3>
         </div>
@@ -38,21 +58,72 @@
               <input  type="email" matInput placeholder="Enter email" formControlName="email" required />
               <mat-error>Email is required.</mat-error>
             </mat-form-field>
+            <mat-form-field>
+                <mat-select placeholder="Select gender">
+                  <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                    {{gender.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
             </div>
 
             <div fxLayout="row" fxLayoutGap="1rem">
+
+                <mat-form-field>
+                    <mat-select placeholder="Select profile">
+                      <mat-option *ngFor="let profile of profiles" [value]="profile.value">
+                        {{profile.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                      <mat-select  placeholder="Select job" [formControlName]="jobList" multiple>
+                        <mat-option *ngFor="let job of jobList" [value]="job">
+                          {{job}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="1rem">
+
               <mat-form-field>
-                <input  type="text" matInput placeholder="Enter address" formControlName="address" required />
-                <mat-error>
-                  Address is required.
-                </mat-error>
-              </mat-form-field>
+                    <mat-select  placeholder="Select programming languages" [formControlName]="languageList" multiple>
+                      <mat-option *ngFor="let language of languageList" [value]="language">
+                        {{language}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                      <mat-select  placeholder="Select systems" [formControlName]="systemList" multiple>
+                        <mat-option *ngFor="let system of systemList" [value]="system">
+                          {{system}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+            </div>
+
+
+            <div fxLayout="row" fxLayoutGap="1rem">
+
+              <mat-form-field>
+                    <mat-select placeholder="Select business application" [formControlName]="businessList" multiple>
+                      <mat-option *ngFor="let business of businessList" [value]="business">
+                        {{business}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
               <mat-form-field>
                 <input type="text" matInput placeholder="Enter message" formControlName="message" required />
                 <mat-error>
                   Message is required.
                 </mat-error>
               </mat-form-field>
+
             </div>
 
             <div fxLayout="row" class="mt-2" fxLayoutAlign="center center">
@@ -66,4 +137,60 @@
     </div>
   </div>
 </div>
+
+<div fxLayout="column" class="padding-ref">
+      <div  fxLayout="column" fxLayoutAlign="space-evenly center">
+
+          <h2>Contact Us</h2>
+
+             <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
+
+      </div>
+
+      <div  fxLayout="row" fxLayoutAlign="space-evenly center" class="padding-ref">
+
+      <div>
+          <div></div>
+          <p>Address</p>
+          <p>Rr.'Andon Zako Cajupi",  <br />
+              Nd.14, H.14, Ap.1,<br />
+              Tirana</p>
+      </div>
+
+      <div>
+          <div></div>
+          <p >Phone</p>
+          <a href="tel: +355 44 81 3008"> +355 44 81 3008</a><br>
+          <a href="tel:+355 69 33 22 090">+355 69 33 22 090</a><br>
+          <a href="tel:+355692610893">+355 69 26 10 893</a>
+
+      </div>
+
+      <div>
+          <div></div>
+          <p>Email</p>
+          <p><a href="mailto:info@cliftonhotel.com" title="">jobs@thetechpro.be</a></p>
+      </div>
+
+      <div>
+          <div></div>
+          <p>Social</p>
+          <p>Connect with Us:</p>
+          <ul>
+              <li> <a href="https://www.linkedin.com/company/techpro-be/"><i class="fa fa-linkedin"></i></a> </li>
+          </ul>
+      </div>
+
+    </div>
+
+</div>
+
+
+  <div fxLayout="row" fxLayoutAlign="space-evenly center" class="footer-class" >
+
+        <span>© 2019 <a href="https://www.thetechpro.be" data-title="Programming Company in Albania">TECHPRO</a> by <a href="https://www.odo.thetechpro.be" data-title="Programming Company in Albania">O.D.O.</a> All Rights Reserved.
+        </span>
+
+  </div>
+
 

@@ -16,7 +16,7 @@ import {
   MatSortModule,
   MatTableModule,
   MatTabsModule,
-  MatToolbarModule
+  MatToolbarModule,
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 
