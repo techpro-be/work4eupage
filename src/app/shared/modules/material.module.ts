@@ -16,7 +16,10 @@ import {
   MatSortModule,
   MatTableModule,
   MatTabsModule,
+  MatNativeDateModule,
+  MatDatepickerModule,
   MatToolbarModule,
+  MatStepperModule,
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 
@@ -39,7 +42,10 @@ import { NgModule } from '@angular/core';
     MatAutocompleteModule,
     MatPaginatorModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatNativeDateModule,
+  MatDatepickerModule,
+    MatSnackBarModule,
+    MatStepperModule
   ],
   exports: [
     MatButtonModule,
