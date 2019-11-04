@@ -10,24 +10,26 @@ import { environment } from '../environments/environment';
 import { HomeModule } from './modules/home/home.module';
 import { HomeService } from './modules/home/services/home.service';
 import { SharedModule } from './shared/modules/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent   //
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,   //directives and other modules
     SharedModule,
     HomeModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFirestoreModule
   ],
-  providers: [HomeService],
-  bootstrap: [AppComponent],
+  providers: [HomeService],   //for importing services
+  bootstrap: [AppComponent], //this is the root component of project
   entryComponents: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
