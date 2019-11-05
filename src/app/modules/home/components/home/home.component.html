@@ -21,251 +21,6 @@
         </div>
 </div>
 
-             <!-- <div fxLayout="row" fxLayoutGap="1rem">
-
-                <mat-form-field>
-                    <mat-label>Select a profile</mat-label>
-                    <mat-select  formControlName="profile">
-                      <mat-option *ngFor="let profile of profiles" [value]="profile.value">
-                        {{profile.value}}
-                      </mat-option>
-                    </mat-select>
-
-                </mat-form-field>
-
-                <mat-form-field>
-                      <mat-select  placeholder="Select job" [formControlName]="jobs" multiple required>
-                        <mat-option *ngFor="let job of jobs" [value]="job.name">
-                          {{job}}
-                        </mat-option>
-                      </mat-select>
-                      <mat-error>
-                          Job is required.
-                        </mat-error>
-                </mat-form-field>
-            </div>
-
-            <div fxLayout="row" fxLayoutGap="1rem">
-
-              <mat-form-field>
-                    <mat-select  placeholder="Select programming languages" [formControlName]="language" multiple>
-                      <mat-option *ngFor="let language of languages" [value]="language">
-                        {{language}}
-                      </mat-option>
-                      <mat-error>
-                          Select at least one language.
-                        </mat-error>
-                    </mat-select>
-                  </mat-form-field>
-
-                  <mat-form-field>
-                      <mat-select  placeholder="Select systems" [formControlName]="system" multiple>
-                        <mat-option *ngFor="let system of systems" [value]="system">
-                          {{system}}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-
-            </div> -->
-
-
-             <!-- <div fxLayout="row" fxLayoutGap="1rem">
-
-              <mat-form-field>
-                    <mat-select placeholder="Business applications" [formControlName]="business" multiple>
-                      <mat-option *ngFor="let business of businesses" [value]="business">
-                        {{business}}
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-              <mat-form-field>
-                <input type="text" matInput placeholder="Personal background" formControlName="message" required />
-                <mat-error>
-                  Background is required.
-                </mat-error>
-              </mat-form-field>
-
-            </div> -->
-
-<!-- <div  fxLayout="column" fxLayoutAlign="center center"  class="padding-ref" >
-
-
-      <mat-card class="mat-form">
-        <div fxLayout="row" fxLayoutAlign="center center" class="padding-ref"  fxLayoutGap="1rem">
-          <h3 style="color: #fcd604;">CV Form</h3>
-        </div>
-        <mat-card-content>
-          <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="cvForm" (ngSubmit)="onSubmit()">
-
-            <div formGroupName="credentials" fxLayout="column"  fxLayoutAlign="center center" fxLayoutGap="2rem">
-              <h3>Credentials</h3>
-              <div fxLayout="row" fxLayoutGap="1rem">
-
-                      <mat-form-field>
-                        <input type="text" matInput placeholder="First name" formControlName="firstName" required />
-                        <mat-error>Name is required.</mat-error>
-                      </mat-form-field>
-
-                      <mat-form-field>
-                        <input type="text" matInput placeholder="Last name" formControlName="lastName" required />
-                        <mat-error>Surname is required.</mat-error>
-                      </mat-form-field>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="1rem">
-
-                      <mat-form-field>
-                        <input  type="number" matInput placeholder="Enter age" formControlName="age" required />
-                        <mat-error>Age is required.</mat-error>
-                      </mat-form-field>
-
-                      <mat-form-field>
-                        <input  type="tel" matInput placeholder="Enter phone number" formControlName="phone" required />
-                        <mat-error>Phone is required.</mat-error>
-                      </mat-form-field>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="1rem">
-
-                      <mat-form-field>
-                        <input  matInput type="email" matInput placeholder="Enter email" formControlName="email" required />
-                        <mat-error>Please enter a valid email address.</mat-error>
-                      </mat-form-field>
-
-                      <mat-form-field>
-                          <mat-select placeholder="Select gender">
-                            <mat-option *ngFor="let gender of genders" [value]="gender.value">
-                              {{gender.value}}
-                            </mat-option>
-                          </mat-select>
-                      </mat-form-field>
-                </div>
-              </div>
-
-
-        <div formGroupName="workEksperience"  fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="2rem">
-          <div>
-            <h3>Work Eksperience</h3>
-          </div>
-              <div fxLayout="row">
-                  <label>
-                    Start date:
-                    <input type="text" formControlName="stack">
-                  </label>
-                  <label>
-                    End Date:
-                    <input type="text" formControlName="stack">
-                  </label>
-                  <label>
-                  Position:
-                    <input type="text" formControlName="stack">
-                    </label>
-                  <label>
-                    Company name:
-                    <input type="text" formControlName="stack">
-                  </label>
-              </div>
-        </div>
-
-          <div formGroupName="education" fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="1rem">
-
-            <div>
-              <h3>Education</h3>
-            </div>
-
-            <div fxLayout="row">
-              <label>
-                Title:
-                <input matInput type="text" formControlName="educationTitle">
-              </label>
-
-              <label>
-                Start date:
-                <input   matInput type="date" formControlName="educationStartDate">
-              </label>
-              <label>
-                End Date:
-                <input   matInput type="date" formControlName="educationEndDate">
-              </label>
-              <label>
-                University name:
-                <input   matInput type="text" formControlName="universityName">
-              </label>
-            </div>
-        </div>
-
-
-        <div formGroupName="itKnowledge"  fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="1rem">
-
-          <div class="padding-ref">
-                <h3>IT Knowledge</h3>
-            </div>
-
-            <div fxLayout="row">
-
-                <mat-form-field>
-                    <mat-select  placeholder="Select programming languages" [formControlName]="programminglanguage" multiple>
-                      <mat-option *ngFor="let language of languages" [value]="language">
-                        {{language}}
-                      </mat-option>
-                      <mat-error>
-                          Select at least one language.
-                        </mat-error>
-                    </mat-select>
-                  </mat-form-field>
-
-                  <mat-form-field>
-                      <mat-select  placeholder="Select systems" [formControlName]="system" multiple>
-                        <mat-option *ngFor="let system of systems" [value]="system">
-                          {{system}}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-
-                    <mat-form-field>
-                        <mat-select placeholder="Business applications" [formControlName]="business" multiple>
-                          <mat-option *ngFor="let business of businesses" [value]="business">
-                            {{business}}
-                          </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-
-          </div>
-        </div>
-
-
-
-        <div fxLayout="column"  fxLayoutAlign="center center" fxLayoutGap="1rem">
-            <div>
-              <h4>Personal Background</h4>
-            </div>
-
-          <div>
-              <mat-form-field>
-                <input matInput type="text" formControlName="personalBackground" placeholder="Add a short description">
-              </mat-form-field>
-          </div>
-        </div>
-
-        <div fxLayout="row" class="mt-2" fxLayoutAlign="center center">
-            <button mat-raised-button [disabled]="isLoading" color="primary" type="submit">
-              Submit
-            </button>
-        </div>
-      </form>
-    </mat-card-content>
-  </mat-card>
-</div> -->
-
-<!-- <nav class="navbar navbar-expand navbar-light bg-primary d-flex justify-content-between">
-  <div class="navbar-brand mb-0 h1 text-white">ONLINE RESUME BUILDER</div>
-  <div class="navbar-brand mb-0 h1 text-white">
-    <a href="https://github.com/ngdevelop-tech/angular-8-export-pdf" class="text-white h3 mr-3" title="GitHub"><i
-        class="fab fa-github"></i></a>
-    <a href="https://www.ngdevelop.tech/angular-8-export-to-pdf-using-pdfmake/" title="Blog" class="text-white h3"><i class="fas fa-globe"></i></a>
-  </div>
-</nav> -->
 
   <div class="container-fluid">
   <form #resumeForm="ngForm">
@@ -311,11 +66,7 @@
                     placeholder="Enter Email" #Email="ngModel" required
                     [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
                 </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" [(ngModel)]="resume.linkedinAcc" name="linkedinAcc"
-                    placeholder="Enter linkedin account"  #Linkedinacc="ngModel" required
-                    [ngClass]="{'is-invalid': Linkedinacc.invalid && (Linkedinacc.touched || resumeForm.submitted) }">
-                </div>
+
               </div>
             </div>
           </div>
@@ -368,14 +119,22 @@
                     placeholder="Position" #position="ngModel" required
                     [ngClass]="{'is-invalid': position.invalid && (position.touched || resumeForm.submitted) }">
                 </div>
-                <div class="form-group">
-                  <input type="number" class="form-control" name="exInMonths{{i}}" [(ngModel)]="ex.experience"
-                    placeholder="Experience in months" #Experience="ngModel" required
-                    [ngClass]="{'is-invalid': Experience.invalid && (Experience.touched || resumeForm.submitted) }">
-                </div>
+
+                  <div class="form-group">
+                    <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="result{{i}}" [(ngModel)]="ex.startDate"
+                      placeholder="Start Date" #startDate="ngModel" required
+                      [ngClass]="{'is-invalid': startDate.invalid && (startDate.touched || resumeForm.submitted) }">
+                  </div>
+
+
+                  <div class="form-group">
+                    <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="endDate{{i}}" [(ngModel)]="ex.endDate"
+                      placeholder="End Date" #endDate="ngModel" required
+                      [ngClass]="{'is-invalid': endDate.invalid && (endDate.touched || resumeForm.submitted) }">
+                  </div>
+
               </div>
             </div>
-
           </div>
         </div>
 
@@ -398,6 +157,7 @@
                   <select class="form-control" placeholder="Degree" name="degree{{i}}" [(ngModel)]="ed.degree"
                     #Degree="ngModel" required
                     [ngClass]="{'is-invalid': Degree.invalid && (Degree.touched || resumeForm.submitted) }">
+                    <option value="">Select your degree</option>
                     <option [value]="d" *ngFor="let d of degrees">{{d}}</option>
                   </select>
                 </div>
@@ -411,19 +171,18 @@
               </div>
                <div class="col-md-3">
                 <div class="form-group">
-                  <input type="number" class="form-control" name="result{{i}}" [(ngModel)]="ed.startingYear"
+                  <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="result{{i}}" [(ngModel)]="ed.startingYear"
                     placeholder="Starting year" #startingYear="ngModel" required
                     [ngClass]="{'is-invalid': startingYear.invalid && (startingYear.touched || resumeForm.submitted) }">
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <input type="number" class="form-control" name="passingYear{{i}}" [(ngModel)]="ed.passingYear"
+                  <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="passingYear{{i}}" [(ngModel)]="ed.passingYear"
                     placeholder="Passing Year" #PassingYear="ngModel" required
                     [ngClass]="{'is-invalid': PassingYear.invalid && (PassingYear.touched || resumeForm.submitted) }">
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -439,10 +198,10 @@
                   Languages</h4>
                 <button class="btn btn-primary" (click)="addLanguage()">+</button>
               </div>
-              <div class="row">
-                <div class="col-md-4" *ngFor="let s of resume.languages; let i=index">
+              <div class="row" *ngFor="let s of resume.languages; let i=index">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="language{{i}}" [(ngModel)]="s.value"
+                    <input type="text" class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
                       placeholder="Add languages" #Language="ngModel" required
                       [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
                   </div>
@@ -462,17 +221,33 @@
                   IT Knowledge</h4>
                 <button class="btn btn-primary" (click)="additKnowledge()">+</button>
               </div>
-              <div class="row">
-                <div class="col-md-4" *ngFor="let s of resume.itKnowledge; let i=index">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="skill{{i}}" [(ngModel)]="s.value"
-                      placeholder="e.g. Java / Angular / .Net " #Skill="ngModel" required
-                      [ngClass]="{'is-invalid': Skill.invalid && (Skill.touched || resumeForm.submitted) }">
-                  </div>
+
+
+              <div class="shadow-sm card">
+
+                    <div class="row">
+                      <div class="col-md-4" *ngFor="let itKnowledge of resume.itKnowledge; let i=index">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="itSkill{{i}}" [(ngModel)]="itKnowledge.itSkill"
+                            placeholder="Enter a skill" #itSkill="ngModel" required
+                            [ngClass]="{'is-invalid': itSkill.invalid && (itSkill.touched || resumeForm.submitted) }">
+                        </div>
+
+                        <div class="form-group">
+                          <select class="form-control" placeholder="Level" name="level{{i}}" [(ngModel)]="itKnowledge.level"
+                            #Level="ngModel" required
+                            [ngClass]="{'is-invalid': Level.invalid && (Level.touched || resumeForm.submitted) }">
+                            <option value="">Level</option>
+                            <option [value]="level" *ngFor="let level of levels">{{level}}</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
                 </div>
-              </div>
             </div>
           </div>
+
 
 
       </div>  <!--End of personal details -->
@@ -491,33 +266,25 @@
               </div>
               <img *ngIf="resume.profilePic" [src]="resume.profilePic" class="img-thumbnail">
           </div>
+          <div class="card p-4">
+            <div class="form-group">
+                <label class="h4 mb-3" for=""><h4 class="d-flex align-items-center">
+                    <i class="material-icons">
+                        work
+                    </i>
+                    Your position</h4></label>
+              <select class="form-control" placeholder="Position" name="position" [(ngModel)]="resume.position"
+                #Position="ngModel" required
+                [ngClass]="{'is-invalid': Position.invalid && (Position.touched || resumeForm.submitted) }">
+                <option value="">Select your position</option>
+                <option  placeholder="Position" [value]="position" *ngFor="let position of positions">{{position}}</option>
+              </select>
+            </div>
+        </div>
+
 
         <div class="shadow-sm card action-buttons">
-          <!-- <button (click)="resumeForm.valid ? generatePdf('open') : ''"
-            class="btn btn-primary d-flex align-items-center justify-content-center">
-            <i class="material-icons">
-              picture_as_pdf
-            </i> <span>Open PDF</span>
-          </button>
-          <button (click)="resumeForm.valid ? generatePdf('download') : ''"
-            class="btn btn-primary d-flex align-items-center justify-content-center">
-            <i class="material-icons">
-              cloud_download
-            </i><span>Download PDF</span>
-          </button>
-          <button (click)="resumeForm.valid ? generatePdf('print') : ''"
-            class="btn btn-primary d-flex align-items-center justify-content-center">
-            <i class="material-icons">
-              print
-            </i><span>Print PDF</span>
-          </button>
 
-          <button type='reset' (click)="resetForm()"
-            class="btn btn-primary d-flex align-items-center justify-content-center">
-            <i class="material-icons">
-              clear
-            </i><span>Reset</span>
-          </button> -->
           <button type="submit" [disabled]="!resumeForm.valid" (click)="submitForm()"
             class="btn btn-primary d-flex align-items-center justify-content-center">
             <i class="material-icons">
@@ -530,10 +297,8 @@
                 clear_all
             </i><span>Reset</span>
           </button>
-        </div>
-
-
-     </div>  <!--End of submit -->
+        </div>  <!--End of submit -->
+      </div>
     </div>
   </form>
 </div>

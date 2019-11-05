@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 import { HomeService } from '../../services/home.service';
 import { MatSnackBar } from '@angular/material';
-import { Resume, Education, Experience, Skill, Language } from '../../resume';
+import { Resume, Education, Experience, Skill, Language, itKnowledge } from '../../resume';
 import { ScriptService } from '../../services/script.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 declare let pdfMake: any ;
@@ -34,24 +34,34 @@ export class HomeComponent implements OnInit {
     }
     if (!this.resume.itKnowledge || this.resume.itKnowledge.length === 0) {
       this.resume.itKnowledge = [];
-      this.resume.itKnowledge.push(new Skill());
+      this.resume.itKnowledge.push(new itKnowledge());
     }
 
     console.log('Loading External Scripts');
     this.scriptService.load('pdfMake', 'vfsFonts');
   }
 
-//   genders: Gender[] = [
-//     {value: 'male'},
-//     {value: 'female'}
-//   ];
 
-//   profiles: Profile[] = [
-//     {value: 'web design & development'},
-//     {value: 'application design & development'},
-//     {value: 'systems & infrastructure'},
-//     {value: 'security'},
-//   ];
+  // profiles: Profile[] = [
+  //   {value: 'web design & development'},
+  //   {value: 'application design & development'},
+  //   {value: 'systems & infrastructure'},
+  //   {value: 'security'},
+  // ];
+
+  positions = [
+    'Web design & Development',
+    'Application design & Development',
+    'Systems & Infrastructure',
+    'Security'
+  ];
+
+  levels = [
+  'beginner',
+  'intermediate',
+  'advanced',
+  'expert'
+  ];
 
 //   jobs: Job[] = [
 //     {name: 'Developer / Analyst Programmer'},
@@ -413,7 +423,7 @@ resume = new Resume();
     this.resume.languages.push(new Language());
   }
   additKnowledge() {
-    this.resume.itKnowledge.push(new Skill());
+    this.resume.itKnowledge.push(new itKnowledge());
   }
 
 
@@ -482,25 +492,25 @@ resume = new Resume();
           style: 'header'
         },
 
-        {
-          columns : [
-            {
-              ul : [
-                ...this.resume.itKnowledge.filter((value, index) => index % 3 === 0).map(s => s.value)
-              ]
-            },
-            {
-              ul : [
-                ...this.resume.itKnowledge.filter((value, index) => index % 3 === 1).map(s => s.value)
-              ]
-            },
-            {
-              ul : [
-                ...this.resume.itKnowledge.filter((value, index) => index % 3 === 2).map(s => s.value)
-              ]
-            }
-          ]
-        },
+        // {
+        //   columns : [
+        //     {
+        //       ul : [
+        //         ...this.resume.itKnowledge.filter((value, index) => index % 3 === 0).map(s => s.value)
+        //       ]
+        //     },
+        //     {
+        //       ul : [
+        //         ...this.resume.itKnowledge.filter((value, index) => index % 3 === 1).map(s => s.value)
+        //       ]
+        //     },
+        //     {
+        //       ul : [
+        //         ...this.resume.itKnowledge.filter((value, index) => index % 3 === 2).map(s => s.value)
+        //       ]
+        //     }
+        //   ]
+        // },
         {
           columns : [
               // {
@@ -562,10 +572,6 @@ resume = new Resume();
             {
               text: experience.jobDescription,
             }],
-            {
-              text: 'Experience : ' + experience.experience + ' Months',
-              alignment: 'right'
-            }
           ]
         }]
       );

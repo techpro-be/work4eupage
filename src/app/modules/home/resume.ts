@@ -1,23 +1,23 @@
 export class Resume {
-    profilePic: string;
-    // cv: string;
+
     name: string;
     surname: string;
     address: string;
     phone: number;
     email: string;
-    linkedinAcc: string;
     personalBackground: string;
     experiences: Experience[] = [];
     educations: Education[] = [];
     languages: Language[] = [];
-    itKnowledge: Skill[] = [];
+    itKnowledge: itKnowledge[] = [];
+    profilePic: string;
+    position: string;
 
     constructor() {
         this.experiences.push(new Experience());
         this.educations.push(new Education());
         this.languages.push(new Language());
-        this.itKnowledge.push(new Skill());
+        this.itKnowledge.push(new itKnowledge());
     }
 }
 
@@ -26,7 +26,12 @@ export class Experience {
     position: string;
     jobDescription: string;
     startDate: string;
-    experience: number;
+    endDate: string;
+}
+
+export class itKnowledge {
+  itSkill: string;
+  level: string;
 }
 
 export class Education {
@@ -41,5 +46,5 @@ export class Skill {
 }
 
 export class Language {
-  value: string;
+  languageName: string;
 }
