@@ -59,8 +59,32 @@ export class HomeComponent implements OnInit {
      'Doctoral degree'
     ];
 
+    spokenLanguages = [
+      'Albanian',
+      'English',
+      'German',
+      'French',
+      'Italian',
+      'Spanish',
+      'Greek',
+      'Croatian',
+      'Bosnian',
+      'Serbian',
+      'Macedonian',
+      'Montenegrin',
+      'Turkish',
+      'Bulgarian',
+      'Romanian',
+      'Dutch',
+      'Hungarian',
+      'Swedish',
+      'Danish',
+      'Czech',
+      'Bulgarian',
+    ];
 
   resume = new Resume();
+
   ngOnInit() {}
 
 //   jobs: Job[] = [

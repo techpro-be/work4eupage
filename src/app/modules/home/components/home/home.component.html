@@ -200,9 +200,16 @@
                 <div class="row" *ngFor="let s of resume.languages; let i=index">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
+                      <!-- <input type="text"  class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
                         placeholder="Add languages" #Language="ngModel" required
-                        [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
+                        [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }"
+                        > -->
+                        <select type="text"  class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
+                        placeholder="Add languages" #Language="ngModel" required
+                      [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
+                      <option value="">Select language</option>
+                      <option [value]="l" *ngFor="let l of spokenLanguages">{{l}}</option>
+                    </select>
                     </div>
                   </div>
                 </div>
