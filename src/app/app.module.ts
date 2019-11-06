@@ -15,12 +15,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent   //
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,   //directives and other modules
+    BrowserAnimationsModule,   // directives and other modules
     SharedModule,
     HomeModule,
     HttpClientModule,
@@ -28,8 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireStorageModule,
     AngularFirestoreModule
   ],
-  providers: [HomeService],   //for importing services
-  bootstrap: [AppComponent], //this is the root component of project
+  providers: [HomeService],   // for importing services
+  bootstrap: [AppComponent], // this is the root component of project
   entryComponents: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

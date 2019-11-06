@@ -9,8 +9,7 @@ export class HomeService {
 
   constructor(private firestore: AngularFirestore) {}
 
-
-  createCv(data) {
+  createCv(data: Resume) {
     return new Promise<any>((resolve, reject) => {
         this.firestore
             .collection('cvForm')
@@ -22,15 +21,4 @@ export class HomeService {
     });
 }
 
-createCvdata(data) {
-  return new Promise<any>((resolve, reject) => {
-      this.firestore
-          .collection('form')
-          .add(Object.assign({},data))
-          .then(
-            (res: any) => {
-            resolve(res);
-          }, err => reject(err));
-  });
-}
 }

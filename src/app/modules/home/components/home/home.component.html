@@ -1,5 +1,5 @@
 
-<div class="bg-image margin-b">
+<div fxHide fxShow.gt-sm class="bg-image margin-b">
 </div>
 
 <div fxLayout="column"  fxLayoutAlign="center center">
@@ -22,239 +22,238 @@
 </div>
 
 
-  <div class="container-fluid">
+<div class="container-fluid">
   <form #resumeForm="ngForm">
     <div class="row">
+
       <div class="col-md-8">
 
-        <!-- Personal details -->
-        <div class="shadow-sm card">
-          <div class="card-body">
-            <h4 class="card-title d-flex ml-1 align-items-center">
-              <i class="material-icons">
-                  person_pin
-              </i>
-              Personal Details</h4>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Enter name"
-                    #Name="ngModel" required
-                    [ngClass]="{'is-invalid': Name.invalid && (Name.touched || resumeForm.submitted) }">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="resume.surname" name="surname" placeholder="Enter surname"
-                      #Surname="ngModel" required
-                      [ngClass]="{'is-invalid': Surname.invalid && (Surname.touched || resumeForm.submitted) }">
-                </div>
-                <div class="form-group">
-                  <div class="form-group">
-                    <textarea class="form-control" [(ngModel)]="resume.address" name="address" rows="1"
-                      placeholder="Address" #Address="ngModel" required
-                      [ngClass]="{'is-invalid': Address.invalid && (Address.touched || resumeForm.submitted) }"></textarea>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" [(ngModel)]="resume.phone" name="phone"
-                    placeholder="Enter phone number" #Phone="ngModel" required
-                    [ngClass]="{'is-invalid': Phone.invalid && (Phone.touched || resumeForm.submitted) }">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"
-                    placeholder="Enter Email" #Email="ngModel" required
-                    [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-               <!-- Personal Background -->
-        <div class="shadow-sm card">
+          <!-- Personal details -->
+          <div class="shadow-sm card">
             <div class="card-body">
-              <h4 class="card-title d-flex align-items-center">
-                <i class="material-icons"> assignment </i>Personal Background</h4>
+              <h4 class="card-title d-flex ml-1 align-items-center">
+                <i class="material-icons">
+                    person_pin
+                </i>
+                Personal Details</h4>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <textarea  placeholder="Describe your personal background" type="text" class="form-control" [(ngModel)]="resume.personalBackground" name="personalBackground"
-                      rows="4"></textarea>
+                    <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Enter name"
+                      #Name="ngModel" required
+                      [ngClass]="{'is-invalid': Name.invalid && (Name.touched || resumeForm.submitted) }">
                   </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" [(ngModel)]="resume.surname" name="surname" placeholder="Enter surname"
+                        #Surname="ngModel" required
+                        [ngClass]="{'is-invalid': Surname.invalid && (Surname.touched || resumeForm.submitted) }">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <textarea class="form-control" [(ngModel)]="resume.address" name="address" rows="1"
+                        placeholder="Address" #Address="ngModel" required
+                        [ngClass]="{'is-invalid': Address.invalid && (Address.touched || resumeForm.submitted) }"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="resume.phone" name="phone"
+                      placeholder="Enter phone number" #Phone="ngModel" required
+                      [ngClass]="{'is-invalid': Phone.invalid && (Phone.touched || resumeForm.submitted) }">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"
+                      placeholder="Enter Email" #Email="ngModel" required
+                      [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
 
-        <!-- Work Experience -->
-        <div class="shadow-sm card">
-          <div class="card-body">
-            <div class="d-flex justify-content-between card-title">
-              <h4 class="d-flex align-items-center">
-                <i class="material-icons">
-                    work
-                </i>
-                Work Experience</h4>
-              <button class="btn btn-primary" (click)="addExperience()">+</button>
-            </div>
-            <div class="row" *ngFor="let ex of resume.experiences; let i=index">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="employer{{i}}" [(ngModel)]="ex.employer"
-                    placeholder="Company name" #Employer="ngModel" required
-                    [ngClass]="{'is-invalid': Employer.invalid && (Employer.touched || resumeForm.submitted) }">
-                </div>
-                <div class="form-group">
-                  <div class="form-group">
-                    <textarea class="form-control" name="jobDescription{{i}}" [(ngModel)]="ex.jobDescription" rows="3"
-                      placeholder="Job Description"></textarea>
+          <!-- Personal Background -->
+          <div class="shadow-sm card">
+              <div class="card-body">
+                <h4 class="card-title d-flex align-items-center">
+                  <i class="material-icons"> assignment </i>Personal Background</h4>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea  placeholder="Describe your personal background" type="text" class="form-control" [(ngModel)]="resume.personalBackground" name="personalBackground"
+                        rows="4"></textarea>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="position{{i}}" [(ngModel)]="ex.position"
-                    placeholder="Position" #position="ngModel" required
-                    [ngClass]="{'is-invalid': position.invalid && (position.touched || resumeForm.submitted) }">
-                </div>
-
-                  <div class="form-group">
-                    <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="result{{i}}" [(ngModel)]="ex.startDate"
-                      placeholder="Start Date" #startDate="ngModel" required
-                      [ngClass]="{'is-invalid': startDate.invalid && (startDate.touched || resumeForm.submitted) }">
-                  </div>
-
-
-                  <div class="form-group">
-                    <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="endDate{{i}}" [(ngModel)]="ex.endDate"
-                      placeholder="End Date" #endDate="ngModel" required
-                      [ngClass]="{'is-invalid': endDate.invalid && (endDate.touched || resumeForm.submitted) }">
-                  </div>
-
-              </div>
             </div>
-          </div>
-        </div>
 
-
-
-        <!-- Education -->
-        <div class="shadow-sm card">
-          <div class="card-body">
-            <div class="d-flex justify-content-between card-title">
-              <h4 class="d-flex align-items-center">
-                <i class="material-icons">
-                  school
-                </i>
-                Education</h4>
-              <button class="btn btn-primary" (click)="addEducation()">+</button>
-            </div>
-            <div class="row" *ngFor="let ed of resume.educations; let i=index">
-              <div class="col-md-3">
-                <div class="form-group">
-                  <select class="form-control" placeholder="Degree" name="degree{{i}}" [(ngModel)]="ed.degree"
-                    #Degree="ngModel" required
-                    [ngClass]="{'is-invalid': Degree.invalid && (Degree.touched || resumeForm.submitted) }">
-                    <option value="">Select your degree</option>
-                    <option [value]="d" *ngFor="let d of degrees">{{d}}</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="college{{i}}" [(ngModel)]="ed.college"
-                    placeholder="University name" #College="ngModel" required
-                    [ngClass]="{'is-invalid': College.invalid && (College.touched || resumeForm.submitted) }">
-                </div>
-              </div>
-               <div class="col-md-3">
-                <div class="form-group">
-                  <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="result{{i}}" [(ngModel)]="ed.startingYear"
-                    placeholder="Starting year" #startingYear="ngModel" required
-                    [ngClass]="{'is-invalid': startingYear.invalid && (startingYear.touched || resumeForm.submitted) }">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="passingYear{{i}}" [(ngModel)]="ed.passingYear"
-                    placeholder="Passing Year" #PassingYear="ngModel" required
-                    [ngClass]="{'is-invalid': PassingYear.invalid && (PassingYear.touched || resumeForm.submitted) }">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Languages -->
-        <div class="shadow-sm card">
+          <!-- Work Experience -->
+          <div class="shadow-sm card">
             <div class="card-body">
               <div class="d-flex justify-content-between card-title">
                 <h4 class="d-flex align-items-center">
                   <i class="material-icons">
-                      language
+                      work
                   </i>
-                  Languages</h4>
-                <button class="btn btn-primary" (click)="addLanguage()">+</button>
+                  Work Experience</h4>
+                <button class="btn btn-primary" (click)="addExperience()">+</button>
               </div>
-              <div class="row" *ngFor="let s of resume.languages; let i=index">
-                <div class="col-md-4">
+              <div class="row" *ngFor="let ex of resume.experiences; let i=index">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
-                      placeholder="Add languages" #Language="ngModel" required
-                      [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
+                    <input type="text" class="form-control" name="employer{{i}}" [(ngModel)]="ex.employer"
+                      placeholder="Company name" #Employer="ngModel" required
+                      [ngClass]="{'is-invalid': Employer.invalid && (Employer.touched || resumeForm.submitted) }">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <textarea class="form-control" name="jobDescription{{i}}" [(ngModel)]="ex.jobDescription" rows="3"
+                        placeholder="Job Description"></textarea>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-        </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="position{{i}}" [(ngModel)]="ex.position"
+                      placeholder="Position" #position="ngModel" required
+                      [ngClass]="{'is-invalid': position.invalid && (position.touched || resumeForm.submitted) }">
+                  </div>
 
-        <!-- itKnowledge -->
-        <div class="shadow-sm card">
-            <div class="card-body">
-              <div class="d-flex justify-content-between card-title">
-                <h4 class="d-flex align-items-center">
-                  <i class="material-icons">
-                      memory
-                  </i>
-                  IT Knowledge</h4>
-                <button class="btn btn-primary" (click)="additKnowledge()">+</button>
-              </div>
+                    <div class="form-group">
+                      <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="result{{i}}" [(ngModel)]="ex.startDate"
+                        placeholder="Start Date" #startDate="ngModel" required
+                        [ngClass]="{'is-invalid': startDate.invalid && (startDate.touched || resumeForm.submitted) }">
+                    </div>
 
 
-              <div class="shadow-sm card">
-
-                    <div class="row">
-                      <div class="col-md-4" *ngFor="let itKnowledge of resume.itKnowledge; let i=index">
-                        <div class="form-group">
-                          <input type="text" class="form-control" name="itSkill{{i}}" [(ngModel)]="itKnowledge.itSkill"
-                            placeholder="Enter a skill" #itSkill="ngModel" required
-                            [ngClass]="{'is-invalid': itSkill.invalid && (itSkill.touched || resumeForm.submitted) }">
-                        </div>
-
-                        <div class="form-group">
-                          <select class="form-control" placeholder="Level" name="level{{i}}" [(ngModel)]="itKnowledge.level"
-                            #Level="ngModel" required
-                            [ngClass]="{'is-invalid': Level.invalid && (Level.touched || resumeForm.submitted) }">
-                            <option value="">Level</option>
-                            <option [value]="level" *ngFor="let level of levels">{{level}}</option>
-                          </select>
-                        </div>
-                      </div>
+                    <div class="form-group">
+                      <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="endDate{{i}}" [(ngModel)]="ex.endDate"
+                        placeholder="End Date" #endDate="ngModel" required
+                        [ngClass]="{'is-invalid': endDate.invalid && (endDate.touched || resumeForm.submitted) }">
                     </div>
 
                 </div>
+              </div>
             </div>
           </div>
 
+          <!-- Education -->
+          <div class="shadow-sm card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between card-title">
+                <h4 class="d-flex align-items-center">
+                  <i class="material-icons">
+                    school
+                  </i>
+                  Education</h4>
+                <button class="btn btn-primary" (click)="addEducation()">+</button>
+              </div>
+              <div class="row" *ngFor="let ed of resume.educations; let i=index">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select class="form-control" placeholder="Degree" name="degree{{i}}" [(ngModel)]="ed.degree"
+                      #Degree="ngModel" required
+                      [ngClass]="{'is-invalid': Degree.invalid && (Degree.touched || resumeForm.submitted) }">
+                      <option value="">Select your degree</option>
+                      <option [value]="d" *ngFor="let d of degrees">{{d}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="college{{i}}" [(ngModel)]="ed.college"
+                      placeholder="University name" #College="ngModel" required
+                      [ngClass]="{'is-invalid': College.invalid && (College.touched || resumeForm.submitted) }">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="result{{i}}" [(ngModel)]="ed.startingYear"
+                      placeholder="Starting year" #startingYear="ngModel" required
+                      [ngClass]="{'is-invalid': startingYear.invalid && (startingYear.touched || resumeForm.submitted) }">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="passingYear{{i}}" [(ngModel)]="ed.passingYear"
+                      placeholder="Passing Year" #PassingYear="ngModel" required
+                      [ngClass]="{'is-invalid': PassingYear.invalid && (PassingYear.touched || resumeForm.submitted) }">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Languages -->
+          <div class="shadow-sm card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between card-title">
+                  <h4 class="d-flex align-items-center">
+                    <i class="material-icons">
+                        language
+                    </i>
+                    Languages</h4>
+                  <button class="btn btn-primary" (click)="addLanguage()">+</button>
+                </div>
+                <div class="row" *ngFor="let s of resume.languages; let i=index">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
+                        placeholder="Add languages" #Language="ngModel" required
+                        [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
 
-      </div>  <!--End of personal details -->
+          <!-- itKnowledge -->
+          <div class="shadow-sm card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between card-title">
+                  <h4 class="d-flex align-items-center">
+                    <i class="material-icons">
+                        memory
+                    </i>
+                    IT Knowledge</h4>
+                </div>
 
+                <div class="card-body">
+                    <div class="d-flex justify-content-between card-title">
+                      <h4 class="d-flex align-items-center">
+                        <i class="material-icons">
+                            build
+                        </i>
+                        Skills</h4>
+                        <button class="btn btn-primary" (click)="additKnowledge()">+</button>
+                    </div>
+                    <div class="row" *ngFor="let itKnowledge of resume.itKnowledge; let i=index">
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <input type="text" class="form-control" name="itSkill{{i}}" [(ngModel)]="itKnowledge.itSkill"
+                                placeholder="Enter a skill" #itSkill="ngModel" required
+                                [ngClass]="{'is-invalid': itSkill.invalid && (itSkill.touched || resumeForm.submitted) }">
+                            </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <select class="form-control" placeholder="Level" name="level{{i}}" [(ngModel)]="itKnowledge.level"
+                                #Level="ngModel" required
+                                [ngClass]="{'is-invalid': Level.invalid && (Level.touched || resumeForm.submitted) }">
+                                <option value="">Level</option>
+                                <option [value]="level" *ngFor="let level of levels">{{level}}</option>
+                              </select>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>  <!--End of details column-->
 
-       <!--Profile picture and submit -->
-    <div class="col-md-4">
+      <div class="col-md-4">
           <div class="card p-4">
               <div class="form-group">
                 <label class="h4 mb-3" for=""><h4 class="d-flex align-items-center">
@@ -292,68 +291,124 @@
             </i> <span>Submit</span>
           </button>
           <button type='reset' (click)="resetForm()"
-            class="btn btn-primary d-flex align-items-center justify-content-center">
+            class="btn btn-primary  button-color-yellow d-flex align-items-center justify-content-center">
             <i class="material-icons">
                 clear_all
             </i><span>Reset</span>
           </button>
-        </div>  <!--End of submit -->
-      </div>
+        </div>  <!--End of submit column-->
+      </div>  <!--End of profile picture and submit  column-->
+
     </div>
   </form>
 </div>
 
 
 
-<div fxLayout="column" class="padding-ref">
-      <div  fxLayout="column" fxLayoutAlign="space-evenly center">
+<div fxLayout="column" class="padding-ref" fxHide fxShow.gt-sm >
 
-          <h2>Contact Us</h2>
+  <div  fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="5px;">
 
-             <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
+     <h2>Contact Us</h2>
 
-      </div>
+      <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
 
-      <div  fxLayout="row" fxLayoutAlign="space-evenly center" class="padding-ref">
+  </div>
 
-      <div>
+  <div  fxLayout="row" fxLayoutAlign="space-evenly center" class="padding-ref">
+
+    <div>
           <div></div>
           <mat-icon>home</mat-icon>
           <p>Address</p>
           <p>Rr. "Andon Zako Cajupi"  <br />
-              Nd.14, H.14, Ap.1<br />
-              Tirana</p>
-      </div>
+           Nd.14, H.14, Ap.1<br />
+           Tirana
+          </p>
+    </div>
 
-      <div>
-          <div></div>
-          <mat-icon> phone</mat-icon>
-          <p >Phone</p>
-          <a href="tel: +355 44 81 3008"> +355 44 81 3008</a><br>
-          <a href="tel:+355 69 33 22 090">+355 69 33 22 090</a><br>
-          <a href="tel:+355692610893">+355 69 26 10 893</a>
-
-      </div>
-
-      <div>
-          <div></div>
-          <mat-icon>mail</mat-icon>
-          <p>Email</p>
-          <p>Sent an email at:</p>
-          <p><a href="mailto:info@thetechpro.be" title="">jobs@thetechpro.be</a></p>
-      </div>
-
-      <div>
-          <div></div>
-          <mat-icon>group_add</mat-icon>
-          <p>Social</p>
-          <p>Connect with us:</p>
-          <a href="https://www.linkedin.com/company/techpro-be/">Linkedin</a>
-      </div>
+    <div>
+              <div></div>
+              <mat-icon> phone</mat-icon>
+              <p >Phone</p>
+              <a href="tel: +355 44 81 3008"> +355 44 81 3008</a><br>
+              <a href="tel:+355 69 33 22 090">+355 69 33 22 090</a><br>
+              <a href="tel:+355692610893">+355 69 26 10 893</a>
 
     </div>
 
-</div>
+    <div>
+              <div></div>
+              <mat-icon>mail</mat-icon>
+              <p>Email</p>
+              <p>Sent an email at:</p>
+              <p><a href="mailto:info@thetechpro.be" title="">jobs@thetechpro.be</a></p>
+    </div>
+
+    <div>
+              <div></div>
+              <mat-icon>group_add</mat-icon>
+              <p>Social</p>
+              <p>Connect with us:</p>
+              <a href="https://www.linkedin.com/company/techpro-be/">Linkedin</a>
+    </div>
+
+  </div>
+
+</div>     <!--For web-->
+
+
+<div fxLayout="column" class="padding-ref" fxShow fxHide.gt-sm  fxLayoutAlign="center center"  >
+
+  <div  fxLayout="column"  fxLayoutGap="5px;" fxLayoutAlign="space-evenly center">
+
+     <h2>Contact Us</h2>
+
+      <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
+
+  </div>
+
+  <div  fxLayout="column"  fxLayoutAlign="space-evenly center" class="padding-ref">
+
+    <div>
+          <div></div>
+          <mat-icon>home</mat-icon>
+          <p>Address</p>
+          <p>Rr. "Andon Z. Cajupi"  <br />
+           Nd.14, H.14, Ap.1<br />
+           Tirana
+          </p>
+    </div>
+
+    <div>
+              <div></div>
+              <mat-icon> phone</mat-icon>
+              <p >Phone</p>
+              <a href="tel: +355 44 81 3008"> +355 44 81 3008</a><br>
+              <a href="tel:+355 69 33 22 090">+355 69 33 22 090</a><br>
+              <a href="tel:+355692610893">+355 69 26 10 893</a>
+
+    </div>
+
+    <div>
+              <div></div>
+              <mat-icon>mail</mat-icon>
+              <p>Email</p>
+              <p>Sent an email at:</p>
+              <p><a href="mailto:info@thetechpro.be" title="">jobs@thetechpro.be</a></p>
+    </div>
+
+    <div>
+              <div></div>
+              <mat-icon>group_add</mat-icon>
+              <p>Social</p>
+              <p>Connect with us:</p>
+              <a href="https://www.linkedin.com/company/techpro-be/">Linkedin</a>
+    </div>
+
+  </div>
+
+</div>  <!--For mobile-->
 
 
   <div fxLayout="row" fxLayoutAlign="space-evenly center" class="footer-class" >

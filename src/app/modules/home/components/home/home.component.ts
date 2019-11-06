@@ -3,9 +3,8 @@ import { FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 import { HomeService } from '../../services/home.service';
 import { MatSnackBar } from '@angular/material';
 import { Resume, Education, Experience, Skill, Language, itKnowledge } from '../../resume';
-import { ScriptService } from '../../services/script.service';
 import { AngularFirestore } from '@angular/fire/firestore';
-declare let pdfMake: any ;
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +13,7 @@ declare let pdfMake: any ;
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private scriptService: ScriptService,
+  constructor(
               private homeService: HomeService,
               private db: AngularFirestore,
               private snackBar: MatSnackBar) {
@@ -36,18 +35,8 @@ export class HomeComponent implements OnInit {
       this.resume.itKnowledge = [];
       this.resume.itKnowledge.push(new itKnowledge());
     }
-
-    console.log('Loading External Scripts');
-    this.scriptService.load('pdfMake', 'vfsFonts');
   }
 
-
-  // profiles: Profile[] = [
-  //   {value: 'web design & development'},
-  //   {value: 'application design & development'},
-  //   {value: 'systems & infrastructure'},
-  //   {value: 'security'},
-  // ];
 
   positions = [
     'Web design & Development',
@@ -57,11 +46,22 @@ export class HomeComponent implements OnInit {
   ];
 
   levels = [
-  'beginner',
-  'intermediate',
-  'advanced',
-  'expert'
+  'Beginner',
+  'Intermediate',
+  'Advanced',
+  'Expert'
   ];
+
+  degrees = [
+    'Associate degree',
+     'Bachelor\'s degree',
+     'Master\'s degree',
+     'Doctoral degree'
+    ];
+
+
+  resume = new Resume();
+  ngOnInit() {}
 
 //   jobs: Job[] = [
 //     {name: 'Developer / Analyst Programmer'},
@@ -382,8 +382,9 @@ export class HomeComponent implements OnInit {
 //       });
 //   }
 
-  submitForm() {
+  submitForm(resume: Resume[]) {
       const data = this.resume;
+      console.log('Sumbit form typed', data);
       this.homeService.createCv(data)
       .then(
         resp => {
@@ -402,15 +403,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-//   resetresumeForm(resumeForm: NgForm) {
-//     resumeForm.resetForm();
-//  }
 
-resume = new Resume();
-
-  degrees = ['Associate degree', 'Bachelor\'s degree', 'Master\'s degree', 'Doctoral degree'];
-
-  ngOnInit() {}
 
   addExperience() {
     this.resume.experiences.push(new Experience());
@@ -427,205 +420,8 @@ resume = new Resume();
   }
 
 
-
-  generatePdf(action = 'open') {
-    console.log(pdfMake);
-    const documentDefinition = this.getDocumentDefinition();
-    console.log('data', documentDefinition);
-
-    switch (action) {
-      case 'open': pdfMake.createPdf(documentDefinition).open(); break;
-      case 'print': pdfMake.createPdf(documentDefinition).print(); break;
-      case 'download': pdfMake.createPdf(documentDefinition).download(); break;
-
-      default: pdfMake.createPdf(documentDefinition).open(); break;
-    }
-
-  }
-
   resetForm() {
     this.resume = new Resume();
-  }
-
-
-
-  getDocumentDefinition() {
-    sessionStorage.setItem('resume', JSON.stringify(this.resume));
-    return {
-      content: [
-        {
-          text: 'TechSheet',
-          bold: true,
-          fontSize: 20,
-          alignment: 'center',
-          margin: [0, 0, 0, 20]
-        },
-        {
-          columns: [
-            [
-              {
-                text: this.resume.name,
-                style: 'name'
-              }
-            ],
-            [
-              this.getProfilePicObject()
-            ]
-          ]
-        },
-        {
-          text: 'Personal background',
-          style: 'header'
-        },
-        {
-          text: 'Work Experience',
-          style: 'header'
-        },
-        this.getExperienceObject(this.resume.experiences),
-        {
-          text: 'Education',
-          style: 'header'
-        },
-        this.getEducationObject(this.resume.educations),
-        {
-          text: 'IT Knowledge',
-          style: 'header'
-        },
-
-        // {
-        //   columns : [
-        //     {
-        //       ul : [
-        //         ...this.resume.itKnowledge.filter((value, index) => index % 3 === 0).map(s => s.value)
-        //       ]
-        //     },
-        //     {
-        //       ul : [
-        //         ...this.resume.itKnowledge.filter((value, index) => index % 3 === 1).map(s => s.value)
-        //       ]
-        //     },
-        //     {
-        //       ul : [
-        //         ...this.resume.itKnowledge.filter((value, index) => index % 3 === 2).map(s => s.value)
-        //       ]
-        //     }
-        //   ]
-        // },
-        {
-          columns : [
-              // {
-              // text: `(${this.resume.name})`,
-              // alignment: 'right',
-              // }
-          ]
-        }
-      ],
-      info: {
-        title: this.resume.name + '_CV',
-        author: this.resume.name,
-        subject: 'RESUME',
-        keywords: 'RESUME, ONLINE RESUME',
-      },
-        styles: {
-          header: {
-            fontSize: 18,
-            bold: true,
-            margin: [0, 20, 0, 10]
-            // decoration: 'underline'
-          },
-          name: {
-            fontSize: 16,
-            bold: true
-          },
-          position: {
-            fontSize: 14,
-            bold: true,
-            italics: true
-          },
-          sign: {
-            margin: [0, 50, 0, 10],
-            alignment: 'right',
-            italics: true
-          },
-          tableHeader: {
-            bold: true,
-          }
-        }
-    };
-  }
-
-  getExperienceObject(experiences: Experience[]) {
-
-    const exs = [];
-
-    experiences.forEach(experience => {
-      exs.push(
-        [{
-          columns: [
-            [{
-              text: experience.position,
-              style: 'position'
-            },
-            {
-              text: experience.employer,
-            },
-            {
-              text: experience.jobDescription,
-            }],
-          ]
-        }]
-      );
-    });
-
-    return {
-      table: {
-        widths: ['*'],
-        body: [
-          ...exs
-        ]
-      }
-    };
-  }
-
-  getEducationObject(educations: Education[]) {
-    return {
-      table: {
-        widths: ['*', '*', '*', '*'],
-        body: [
-          [{
-            text: 'Degree',
-            style: 'tableHeader'
-          },
-          {
-            text: 'University name',
-            style: 'tableHeader'
-          },
-          {
-            text: 'Start year',
-            style: 'tableHeader'
-          },
-          {
-            text: 'End year',
-            style: 'tableHeader'
-          },
-          ],
-          ...educations.map(ed => {
-            return [ed.degree, ed.college, ed.passingYear, ed.startingYear];
-          })
-        ]
-      }
-    };
-  }
-
-  getProfilePicObject() {
-    if (this.resume.profilePic) {
-      return {
-        image: this.resume.profilePic ,
-        width: 75,
-        alignment : 'right'
-      };
-    }
-    return null;
   }
 
   fileChanged(e) {
