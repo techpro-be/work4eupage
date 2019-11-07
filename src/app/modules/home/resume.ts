@@ -1,5 +1,4 @@
 export class Resume {
-
     name: string;
     surname: string;
     address: string;

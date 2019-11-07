@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
-import { HomeService } from '../../services/home.service';
 import { MatSnackBar } from '@angular/material';
 import { Resume, Education, Experience, Skill, Language, itKnowledge } from '../../resume';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,25 +12,29 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class HomeComponent implements OnInit {
 
+  private resumeCollection: AngularFirestoreCollection<Resume>;
+  cvForms: Observable<Resume[]>;
+
   constructor(
-              private homeService: HomeService,
-              private db: AngularFirestore,
+              private afs: AngularFirestore,
               private snackBar: MatSnackBar) {
 
-    this.resume = JSON.parse(sessionStorage.getItem('resume')) || new Resume();
-    if (!this.resume.experiences || this.resume.experiences.length === 0) {
+                this.resumeCollection = afs.collection<Resume>('cvForm');
+                this.cvForms = this.resumeCollection.valueChanges();
+                this.resume = JSON.parse(sessionStorage.getItem('resume')) || new Resume();
+                if (!this.resume.experiences || this.resume.experiences.length === 0) {
       this.resume.experiences = [];
       this.resume.experiences.push(new Experience());
     }
-    if (!this.resume.educations || this.resume.educations.length === 0) {
+                if (!this.resume.educations || this.resume.educations.length === 0) {
       this.resume.educations = [];
       this.resume.educations.push(new Education());
     }
-    if (!this.resume.languages || this.resume.languages.length === 0) {
+                if (!this.resume.languages || this.resume.languages.length === 0) {
       this.resume.languages = [];
       this.resume.languages.push(new Language());
     }
-    if (!this.resume.itKnowledge || this.resume.itKnowledge.length === 0) {
+                if (!this.resume.itKnowledge || this.resume.itKnowledge.length === 0) {
       this.resume.itKnowledge = [];
       this.resume.itKnowledge.push(new itKnowledge());
     }
@@ -124,204 +127,198 @@ export class HomeComponent implements OnInit {
 //     {name: 'Test / Validation Manager'}
 //   ];
 
-//   systems = [
-// 'Access',
-// 'Adabas',
-// 'Antispam',
-// 'Antivirus',
-// 'Apache',
-// 'BizTalk',
-// 'Citrix',
-// 'Cloud',
-// 'DB2',
-// 'Desktop / PC',
-// 'Embedded / Real-Time',
-// 'Hardware',
-// 'IIS',
-// 'Informix',
-// 'iSeries (AS/400)',
-// 'Linux',
-// 'Lotus Notes Domino',
-// 'Mac OS',
-// 'Mainframe',
-// 'Middleware',
-// 'CICS',
-// 'MQ Series',
-// 'Tibco',
-// 'Tuxedo',
-// 'MongoDB',
-// 'MS Exchange Server',
-// 'MS Office',
-// 'My SQL',
-// 'Network',
-// 'Avaya',
-// 'Cisco',
-// 'DNS',
-// 'Firewall',
-// 'SAN',
-// 'SOAP',
-// 'TCP/IP',
-// 'VPN',
-// 'WAN / LAN',
-// 'Novell',
-// 'Oracle',
-// 'POS terminal',
-// 'PostgreSQL',
-// 'Remedy',
-// 'Security',
-// 'SharePoint',
-// 'SQL Server',
-// 'Storage',
-// 'Sybase',
-// 'Telecom',
-// '3G/4G',
-// 'GSM/GPRS/EDGE',
-// 'Radio',
-// 'VoIP',
-// 'Tivoli',
-// 'Unix',
-// 'HP-UX',
-// 'Solaris',
-// 'Version Control System (VCS)',
-// 'CVS',
-// 'GIT',
-// 'Mercurial',
-// 'Microsoft TFS',
-// 'SVN',
-// 'VMware',
-// 'WebLogic',
-// 'WebSphere AppServer',
-// 'Windows',
-// 'Windows Server',
-// 'Z/OS – OS/400',
-//   ];
-
-//   businesses = [
-//     'Business Intelligence',
-//     'Business Objects',
-//     'Cognos',
-//     'Microsoft BI',
-//     'MicroStrategy',
-//     'Oracle BI',
-//     'SAS',
-//     'CMS',
-//     'Alfresco',
-//     'Drupal',
-//     'Joomla',
-//     'Liferay',
-//     'Magento',
-//     'Wordpress',
-//     'CRM',
-//     'Documentum',
-//     'ERP',
-//     'ETL / Datawarehouse',
-//     'BODI',
-//     'DataStage',
-//     'Informatica PowerCenter',
-//     'Oracle Warehouse Builder',
-//     'SSIS',
-//     'JD Edwards',
-//     'MS Dynamics',
-//     'Axapta',
-//     'Navision',
-//     'Murex',
-//     'Oracle Application Server',
-//     'Oracle E-Business Suite',
-//     'PeopleSoft',
-//     'Salesforce',
-//     'SAP',
-//     'BC',
-//     'BW / BI',
-//     'FI/CO',
-//     'HCP',
-//     'IS-U',
-//     'PM',
-//     'PP',
-//     'PS',
-//     'QM',
-//     'SD/MM',
-//     'WM',
-//     'XI/Netweaver',
-//     'Siebel',
-//     'Swift',
-//   ];
-
-//   languages = [
-//   '.NET',
-//   'ASP.NET',
-//   'C#',
-//   'VB.NET',
-//   'Abap',
-//   'Access',
-//   'ASP',
-//   'C / C++',
-//   'Cobol',
-//   'Cocoa',
-//   'ColdFusion',
-//   'CSS / CSS3',
-//   'Delphi',
-//   'Flash',
-//   'Flex / Air',
-//   'HTML/HTML5',
-//   'XHTML',
-//   'IDE',
-//   'Eclipse',
-//   'IntelliJ',
-//   'Netbeans',
-//   'Visual Studio',
-//   'Zend Studio',
-//   'Java / J2EE',
-//   'EJB',
-//   'Grails',
-//   'GWT',
-//   'J2ME',
-//   'JBoss (WildFly) / Tomcat',
-//   'JPA / Hibernate',
-//   'JSF',
-//   '.NET',
-//   'ASP.NET',
-//  ' C#',
-//   'VB.NET',
-//   'Abap',
-//  ' JSP / Servlets',
-//   'JUnit',
-//   'Maven',
-//   'Spring',
-//   'Struts',
-//   'JavaScript',
-//   'AngularJS',
-//   'JQuery',
-//   'Node.js',
-//   'ReactJS',
-//   'Lotus Notes',
-//   'PhoneGap',
-//   'MS SQL',
-//   'MySQL',
-//   'Natural',
-//  ' Objective C',
-//   'Oracle',
-//   'Forms / Reports',
-//   'PL/SQL',
-//   'Perl',
-//   'Photoshop',
-//   'PHP',
-//   'Symfony',
-//   'YII',
-//   'Zend',
-//   'PL1',
-//   'PowerBuilder',
-//   'Python',
-//   'RPG',
-//   'Ruby',
-//   'SAS',
-//   'Shell',
-//   'SQL',
-//   'UML',
-//   'VBA',
-//   'Visual Basic',
-//   'WinDev / WebDev',
-//   'XML / XSL / XSLT',
-//   ];
+  languages = [
+  '.NET',
+  'ASP.NET',
+  'C#',
+  'VB.NET',
+  'Abap',
+  'Access',
+  'ASP',
+  'C / C++',
+  'Cobol',
+  'Cocoa',
+  'ColdFusion',
+  'CSS / CSS3',
+  'Delphi',
+  'Flash',
+  'Flex / Air',
+  'HTML/HTML5',
+  'XHTML',
+  'IDE',
+  'Eclipse',
+  'IntelliJ',
+  'Netbeans',
+  'Visual Studio',
+  'Zend Studio',
+  'Java / J2EE',
+  'EJB',
+  'Grails',
+  'GWT',
+  'J2ME',
+  'JBoss (WildFly) / Tomcat',
+  'JPA / Hibernate',
+  'JSF',
+  '.NET',
+  'ASP.NET',
+ ' C#',
+  'VB.NET',
+  'Abap',
+ ' JSP / Servlets',
+  'JUnit',
+  'Maven',
+  'Spring',
+  'Struts',
+  'JavaScript',
+  'AngularJS',
+  'JQuery',
+  'Node.js',
+  'ReactJS',
+  'Lotus Notes',
+  'PhoneGap',
+  'MS SQL',
+  'MySQL',
+  'Natural',
+ ' Objective C',
+  'Oracle',
+  'Forms / Reports',
+  'PL/SQL',
+  'Perl',
+  'Photoshop',
+  'PHP',
+  'Symfony',
+  'YII',
+  'Zend',
+  'PL1',
+  'PowerBuilder',
+  'Python',
+  'RPG',
+  'Ruby',
+  'SAS',
+  'Shell',
+  'SQL',
+  'UML',
+  'VBA',
+  'Visual Basic',
+  'WinDev / WebDev',
+  'XML / XSL / XSLT',
+  'Business Intelligence',
+    'Business Objects',
+    'Cognos',
+    'Microsoft BI',
+    'MicroStrategy',
+    'Oracle BI',
+    'SAS',
+    'CMS',
+    'Alfresco',
+    'Drupal',
+    'Joomla',
+    'Liferay',
+    'Magento',
+    'Wordpress',
+    'CRM',
+    'Documentum',
+    'ERP',
+    'ETL / Datawarehouse',
+    'BODI',
+    'DataStage',
+    'Informatica PowerCenter',
+    'Oracle Warehouse Builder',
+    'SSIS',
+    'JD Edwards',
+    'MS Dynamics',
+    'Axapta',
+    'Navision',
+    'Murex',
+    'Oracle Application Server',
+    'Oracle E-Business Suite',
+    'PeopleSoft',
+    'Salesforce',
+    'SAP',
+    'BC',
+    'BW / BI',
+    'FI/CO',
+    'HCP',
+    'IS-U',
+    'PM',
+    'PP',
+    'PS',
+    'QM',
+    'SD/MM',
+    'WM',
+    'XI/Netweaver',
+    'Siebel',
+    'Swift',
+    'Access',
+'Adabas',
+'Antispam',
+'Antivirus',
+'Apache',
+'BizTalk',
+'Citrix',
+'Cloud',
+'DB2',
+'Desktop / PC',
+'Embedded / Real-Time',
+'Hardware',
+'IIS',
+'Informix',
+'iSeries (AS/400)',
+'Linux',
+'Lotus Notes Domino',
+'Mac OS',
+'Mainframe',
+'Middleware',
+'CICS',
+'MQ Series',
+'Tibco',
+'Tuxedo',
+'MongoDB',
+'MS Exchange Server',
+'MS Office',
+'My SQL',
+'Network',
+'Avaya',
+'Cisco',
+'DNS',
+'Firewall',
+'SAN',
+'SOAP',
+'TCP/IP',
+'VPN',
+'WAN / LAN',
+'Novell',
+'Oracle',
+'POS terminal',
+'PostgreSQL',
+'Remedy',
+'Security',
+'SharePoint',
+'SQL Server',
+'Storage',
+'Sybase',
+'Telecom',
+'3G/4G',
+'GSM/GPRS/EDGE',
+'Radio',
+'VoIP',
+'Tivoli',
+'Unix',
+'HP-UX',
+'Solaris',
+'Version Control System (VCS)',
+'CVS',
+'GIT',
+'Mercurial',
+'Microsoft TFS',
+'SVN',
+'VMware',
+'WebLogic',
+'WebSphere AppServer',
+'Windows',
+'Windows Server',
+'Z/OS – OS/400',
+  ];
 
 
 //   constructor(
@@ -406,25 +403,16 @@ export class HomeComponent implements OnInit {
 //       });
 //   }
 
-  submitForm(resume: Resume[]) {
-      const data = this.resume;
-      console.log('Sumbit form typed', data);
-      this.homeService.createCv(data)
-      .then(
-        resp => {
-          this.snackBar.open('Your CV has been submitted successfully ', null, {
+  submitForm() {
+    const param = JSON.parse(JSON.stringify(this.resume));
+    this.resumeCollection
+    .add(param)
+    .then( resp => {
+        this.snackBar.open('Your CV has been submitted successfully ', null, {
             duration: 3000
           });
-          console.log('Data from the new method', data);
-          this.resume = new Resume();
+        this.resume = new Resume();
         });
-      // .catch(error => {
-      //   this.isLoading = false;
-      //   this.snackBar.open(error.message, null, {
-      //     duration: 3000
-      //   });
-      // });
-
   }
 
 

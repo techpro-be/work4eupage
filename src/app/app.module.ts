@@ -8,7 +8,6 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { HomeModule } from './modules/home/home.module';
-import { HomeService } from './modules/home/services/home.service';
 import { SharedModule } from './shared/modules/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -28,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireStorageModule,
     AngularFirestoreModule
   ],
-  providers: [HomeService],   // for importing services
+  providers: [],   // for importing services
   bootstrap: [AppComponent], // this is the root component of project
   entryComponents: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
