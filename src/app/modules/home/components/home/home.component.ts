@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { Resume, Education, Experience, Skill, Language, itKnowledge } from '../../resume';
+import { Resume, Education, Experience, Language, itKnowledge } from '../../resume';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -11,9 +11,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  private resumeCollection: AngularFirestoreCollection<Resume>;
-  cvForms: Observable<Resume[]>;
 
   constructor(
               private afs: AngularFirestore,
@@ -40,12 +37,15 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  private resumeCollection: AngularFirestoreCollection<Resume>;
+  cvForms: Observable<Resume[]>;
+
 
   positions = [
-    'Web design & Development',
     'Application design & Development',
     'Systems & Infrastructure',
-    'Security'
+    'Security',
+    'Web design & Development',
   ];
 
   levels = [
@@ -54,6 +54,14 @@ export class HomeComponent implements OnInit {
   'Advanced',
   'Expert'
   ];
+
+  languageLevels = [
+    'Elementary proficiency',
+    'Limited working proficiency',
+    'Professional working proficiency',
+    'Full professional proficiency',
+    'Native or bilingual proficiency',
+    ];
 
   degrees = [
     'Associate degree',
@@ -64,124 +72,107 @@ export class HomeComponent implements OnInit {
 
     spokenLanguages = [
       'Albanian',
-      'English',
-      'German',
-      'French',
-      'Italian',
-      'Spanish',
-      'Greek',
-      'Croatian',
       'Bosnian',
-      'Serbian',
+      'Bulgarian',
+      'Chinese',
+      'Croatian',
+      'Dutch',
+      'English',
+      'French',
+      'Flemish ',
+      'German',
+      'Greek',
+      'Italian',
       'Macedonian',
       'Montenegrin',
-      'Turkish',
-      'Bulgarian',
       'Romanian',
-      'Dutch',
-      'Hungarian',
-      'Swedish',
-      'Danish',
-      'Czech',
-      'Bulgarian',
+      'Russian',
+      'Spanish',
+      'Serbian',
+      'Turkish',
     ];
 
   resume = new Resume();
 
-  ngOnInit() {}
-
-//   jobs: Job[] = [
-//     {name: 'Developer / Analyst Programmer'},
-//     {name: 'Content Creator'},
-//     {name: 'Graphics / Web Designer'},
-//     {name: 'UX / UI Specialist'},
-//     {name: 'SEO / SEA Specialist'},
-//     {name: 'Digital Marketer'},
-//     {name: 'Business Analyst'},
-//     {name: 'Functional Analyst'},
-//     {name: 'Process Analyst'},
-//     {name: 'Technical Analyst'},
-//     {name: 'Application / Solution Architect'},
-//     {name: 'Enterprise Architect'},
-//     {name: 'Infrastructure Architect'},
-//     {name: 'SOA Specialist'},
-//     {name: 'Quality Specialist'},
-//     {name: 'Test / Validation Engineer'},
-//     {name: 'Test / Validation Manager'},
-//     {name: 'Technical Writer'},
-//     {name: 'Big Data Expert'},
-//     {name: 'Database Developer'},
-//     {name: 'Database Administrator'},
-//     {name: 'Helpdesk / Support'},
-//     {name: 'Operator'},
-//     {name: 'Field / Maintenance Engineer'},
-//     {name: 'Incident & Problem Manager'},
-//     {name: 'System Engineer / Administrator'},
-//     {name: 'DevOps Engineer'},
-//     {name: 'Network / Telecom Engineer'},
-//     {name: 'Security Engineer'},
-//     {name: 'Software Administrator'},
-//     {name: 'Project Manager / Coordinator'},
-//     {name: 'Quality Specialist'},
-//     {name: 'Test / Validation Engineer'},
-//     {name: 'Test / Validation Manager'}
-//   ];
 
   languages = [
-  '.NET',
-  'ASP.NET',
-  'C#',
-  'VB.NET',
   'Abap',
+  'ASP.NET',
   'Access',
   'ASP',
+  'Alfresco',
+  'AngularJS',
+  'Abap',
+  'Adabas',
+  'Antispam',
+  'Antivirus',
+  'Apache',
+  'BizTalk',
+  'C#',
   'C / C++',
   'Cobol',
+  'CVS',
   'Cocoa',
   'ColdFusion',
+  'Citrix',
+  'Cloud',
   'CSS / CSS3',
+  'Documentum',
+  'DB2',
+  'Desktop / PC',
+  'DataStage',
   'Delphi',
+  'Drupal',
   'Flash',
-  'Flex / Air',
-  'HTML/HTML5',
-  'XHTML',
-  'IDE',
+  'ERP',
+  'Embedded / Real-Time',
   'Eclipse',
-  'IntelliJ',
-  'Netbeans',
-  'Visual Studio',
-  'Zend Studio',
-  'Java / J2EE',
-  'EJB',
+  'ETL / Datawarehouse',
+  'Forms / Reports',
+  'Flex / Air',
+  'Firewall',
   'Grails',
+  'GIT',
   'GWT',
+  'HTML/HTML5',
+  'IDE',
+  'IntelliJ',
   'J2ME',
   'JBoss (WildFly) / Tomcat',
   'JPA / Hibernate',
   'JSF',
+  'JavaScript',
+  'JQuery',
+  'Netbeans',
+  'Visual Studio',
+  'Zend Studio',
+  'Java / J2EE',
+  'Maven',
+'Mercurial',
+'Microsoft TFS',
+'MySQL',
+'MS SQL',
+'Microsoft BI',
+  'MicroStrategy',
+'Node.js',
+
+  'EJB',
   '.NET',
-  'ASP.NET',
- ' C#',
   'VB.NET',
-  'Abap',
  ' JSP / Servlets',
   'JUnit',
-  'Maven',
+
   'Spring',
   'Struts',
-  'JavaScript',
-  'AngularJS',
-  'JQuery',
-  'Node.js',
+
   'ReactJS',
   'Lotus Notes',
   'PhoneGap',
-  'MS SQL',
-  'MySQL',
+
   'Natural',
  ' Objective C',
   'Oracle',
-  'Forms / Reports',
+
   'PL/SQL',
   'Perl',
   'Photoshop',
@@ -203,25 +194,15 @@ export class HomeComponent implements OnInit {
   'WinDev / WebDev',
   'XML / XSL / XSLT',
   'Business Intelligence',
-    'Business Objects',
-    'Cognos',
-    'Microsoft BI',
-    'MicroStrategy',
+  'Business Objects',
+  'Cognos',
+
     'Oracle BI',
-    'SAS',
-    'CMS',
-    'Alfresco',
-    'Drupal',
     'Joomla',
     'Liferay',
     'Magento',
     'Wordpress',
     'CRM',
-    'Documentum',
-    'ERP',
-    'ETL / Datawarehouse',
-    'BODI',
-    'DataStage',
     'Informatica PowerCenter',
     'Oracle Warehouse Builder',
     'SSIS',
@@ -230,36 +211,15 @@ export class HomeComponent implements OnInit {
     'Axapta',
     'Navision',
     'Murex',
+    '.NET',
     'Oracle Application Server',
     'Oracle E-Business Suite',
     'PeopleSoft',
     'Salesforce',
     'SAP',
-    'BC',
-    'BW / BI',
-    'FI/CO',
-    'HCP',
-    'IS-U',
-    'PM',
-    'PP',
-    'PS',
-    'QM',
-    'SD/MM',
-    'WM',
     'XI/Netweaver',
     'Siebel',
     'Swift',
-    'Access',
-'Adabas',
-'Antispam',
-'Antivirus',
-'Apache',
-'BizTalk',
-'Citrix',
-'Cloud',
-'DB2',
-'Desktop / PC',
-'Embedded / Real-Time',
 'Hardware',
 'IIS',
 'Informix',
@@ -281,7 +241,7 @@ export class HomeComponent implements OnInit {
 'Avaya',
 'Cisco',
 'DNS',
-'Firewall',
+
 'SAN',
 'SOAP',
 'TCP/IP',
@@ -301,107 +261,25 @@ export class HomeComponent implements OnInit {
 '3G/4G',
 'GSM/GPRS/EDGE',
 'Radio',
-'VoIP',
+
 'Tivoli',
 'Unix',
 'HP-UX',
 'Solaris',
-'Version Control System (VCS)',
-'CVS',
-'GIT',
-'Mercurial',
-'Microsoft TFS',
-'SVN',
+
+
+'VoIP',
 'VMware',
+'XHTML',
+'Version Control System (VCS)',
 'WebLogic',
 'WebSphere AppServer',
 'Windows',
 'Windows Server',
-'Z/OS – OS/400',
-  ];
+];
 
+  ngOnInit() {}
 
-//   constructor(
-//     private homeService: HomeService,
-//     private snackBar: MatSnackBar
-//     ) {}
-
-//   cvForm: FormGroup;
-//   isLoading: boolean;
-
-//   ngOnInit() {
-
-//     this.cvForm = new FormGroup(
-//       {
-//         credentials: new FormGroup({
-
-//           firstName: new FormControl('', {
-//             validators: [Validators.required]
-//           }),
-//           lastName: new FormControl('', {
-//             validators: [Validators.required]
-//           }),
-//           age: new FormControl('', {
-//             validators: [Validators.required, Validators.minLength(18)]
-//           }),
-//           phone: new FormControl('', {
-//             validators: [Validators.required]
-//           }),
-//           email: new FormControl('', {
-//             validators: [Validators.required, Validators.email]
-//           }),
-//           gender: new FormControl('', {
-//             validators: [Validators.required]
-//           }),
-//         }),
-//           workEksperience: new FormGroup({
-
-//             position: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//             workstartDate: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//             workendDate: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//             companyName: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//           }),
-//           education: new FormGroup({
-
-//             educationTitle: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//             educationStartDate: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//             educationEndDate: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//             universityName: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-
-//           }),
-//           itKnowledge: new FormGroup({
-//             programminglanguage: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//             business: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//             system: new FormControl('', {
-//               validators: [Validators.required]
-//             }),
-//           }),
-//           personalBackground: new FormControl('', {
-//             validators: [Validators.required]
-//           }),
-
-//       });
-//   }
 
   submitForm() {
     const param = JSON.parse(JSON.stringify(this.resume));

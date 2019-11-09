@@ -40,10 +40,11 @@ export class Education {
     startingYear: number;
 }
 
-export class Skill {
-    value: string;
-}
+// export class Skill {
+//     value: string;
+// }
 
 export class Language {
   languageName: string;
+  languageLevel: string;
 }

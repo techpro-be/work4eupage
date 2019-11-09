@@ -1,6 +1,9 @@
 
-<div fxHide fxShow.gt-sm class="bg-image margin-b">
+<div fxHide fxShow.gt-sm  fxLayoutAlign="center center">
+  <img src="assets/images/webv1.png" class="img-style" alt="">
 </div>
+
+<div fxShow.xs fxHide.gt-sm class="bg-image-mobile margin-b"></div>
 
 <div fxLayout="column"  fxLayoutAlign="center center">
         <div fxLayout="row" fxLayoutAlign="start center" class="techpro-gif" >
@@ -156,7 +159,7 @@
                     <select class="form-control" placeholder="Degree" name="degree{{i}}" [(ngModel)]="ed.degree"
                       #Degree="ngModel" required
                       [ngClass]="{'is-invalid': Degree.invalid && (Degree.touched || resumeForm.submitted) }">
-                      <option value="">Select your degree</option>
+                      <option value="" disabled>Select your degree</option>
                       <option [value]="d" *ngFor="let d of degrees">{{d}}</option>
                     </select>
                   </div>
@@ -195,24 +198,45 @@
                         language
                     </i>
                     Languages</h4>
-                  <button class="btn btn-primary" (click)="addLanguage()">+</button>
+                  <!-- <button class="btn btn-primary" (click)="addLanguage()">+</button> -->
                 </div>
-                <div class="row" *ngFor="let s of resume.languages; let i=index">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <!-- <input type="text"  class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
-                        placeholder="Add languages" #Language="ngModel" required
-                        [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }"
-                        > -->
-                        <select type="text"  class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
-                        placeholder="Add languages" #Language="ngModel" required
-                      [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
-                      <option value="">Select language</option>
-                      <option [value]="l" *ngFor="let l of spokenLanguages">{{l}}</option>
-                    </select>
+
+
+                <div class="card-body">
+                    <div class="d-flex justify-content-between card-title">
+                      <h4 class="d-flex align-items-center">
+                        <i class="material-icons">
+                            book
+                        </i>
+                        Add language</h4>
+                        <button class="btn btn-primary" (click)="addLanguage()">+</button>
+                    </div>
+
+                    <div class="row" *ngFor="let s of resume.languages; let i=index">
+                      <div class="col-md-3">
+                          <div class="form-group">
+                                <select type="text"  class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
+                                placeholder="Enter language" #Language="ngModel" required
+                                [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
+                              <option value="" disabled>Select language</option>
+                              <option [value]="l" *ngFor="let l of spokenLanguages">{{l}}</option>
+                            </select>
+
+                              </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <select class="form-control" placeholder="Level" name="languageLevel{{i}}" [(ngModel)]="s.languageLevel"
+                                #languageLevel="ngModel" required
+                                [ngClass]="{'is-invalid': languageLevel.invalid && (languageLevel.touched || resumeForm.submitted) }">
+                                <option value="" disabled>Language level</option>
+                                <option [value]="level" *ngFor="let level of languageLevels">{{level}}</option>
+                              </select>
+                            </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+
               </div>
           </div>
 
@@ -239,14 +263,10 @@
                     <div class="row" *ngFor="let itKnowledge of resume.itKnowledge; let i=index">
                       <div class="col-md-3">
                           <div class="form-group">
-                              <!-- <input type="text" class="form-control" name="itSkill{{i}}" [(ngModel)]="itKnowledge.itSkill"
-                                placeholder="Enter a skill" #itSkill="ngModel" required
-                                [ngClass]="{'is-invalid': itSkill.invalid && (itSkill.touched || resumeForm.submitted) }"> -->
-
                                 <select type="text"  class="form-control" name="itSkill{{i}}" [(ngModel)]="itKnowledge.itSkill"
                                 placeholder="Enter a skill" #itSkill="ngModel" required
                                 [ngClass]="{'is-invalid': itSkill.invalid && (itSkill.touched || resumeForm.submitted) }">
-                              <option value="">Select skill</option>
+                              <option value="" disabled>Select skill</option>
                               <option [value]="skill" *ngFor="let skill of languages">{{skill}}</option>
                             </select>
 
@@ -293,7 +313,7 @@
               <select class="form-control" placeholder="Position" name="position" [(ngModel)]="resume.position"
                 #Position="ngModel" required
                 [ngClass]="{'is-invalid': Position.invalid && (Position.touched || resumeForm.submitted) }">
-                <option value="">Select your position</option>
+                <option value="" disabled>Select your position</option>
                 <option  placeholder="Position" [value]="position" *ngFor="let position of positions">{{position}}</option>
               </select>
             </div>
