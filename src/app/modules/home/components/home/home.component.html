@@ -1,25 +1,30 @@
 
-<div fxHide fxShow.gt-sm  fxLayoutAlign="center center">
-  <img src="assets/images/webv1.png" class="img-style" alt="">
+<div fxHide fxShow.gt-sm  fxLayoutAlign="center center" style="padding: 20px;">
+  <img src="assets/images/logofinal.svg" class="img-style" alt="Tech Pro">    <!-- Header for web-->
 </div>
 
-<div fxShow.xs fxHide.gt-sm class="bg-image-mobile margin-b"></div>
+<div fxShow.xs fxHide.gt-sm class="bg-image-mobile margin-b">
+
+</div>  <!-- Header for mobile-->
 
 <div fxLayout="column"  fxLayoutAlign="center center">
         <div fxLayout="row" fxLayoutAlign="start center" class="techpro-gif" >
           <img src="assets/images/techprogif.gif">
         </div>
         <div>
-            <h1 style="font-size:28px; color:rgb(0, 0, 0);">We're Hiring!</h1>
+            <h1 class="application-entry">We're Hiring!</h1>
         </div>
 
-        <div   class="application-entry"fxLayoutAlign="center center" style="text-align: center; display: inline-block;">
-                        You have just finished your studies, or you already have IT experience ? <br>
+        <div fxLayoutAlign="center center">
+
+                        <h5 class="application-entry">
+                          You have just finished your studies, or you already have IT experience ? <br>
                         You wanna work for European companies ?
                         Techpro is a Belgian company specialised in recruiting IT Workforce  <br>to
                         complete the team of European entreprises. Are you attracted by that
                         kind of challenge ? <br> Click the button to fill in the pre-selection,
                         and a member of our team will take contact with you shortly.
+                        </h5>
 
         </div>
 </div>
@@ -35,19 +40,19 @@
           <div class="shadow-sm card">
             <div class="card-body">
               <h4 class="card-title d-flex ml-1 align-items-center">
-                <i class="material-icons">
+                <i class="material-icons mr-1" >
                     person_pin
                 </i>
                 Personal Details</h4>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Enter name"
+                    <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Name"
                       #Name="ngModel" required
                       [ngClass]="{'is-invalid': Name.invalid && (Name.touched || resumeForm.submitted) }">
                   </div>
                   <div class="form-group">
-                      <input type="text" class="form-control" [(ngModel)]="resume.surname" name="surname" placeholder="Enter surname"
+                      <input type="text" class="form-control" [(ngModel)]="resume.surname" name="surname" placeholder="Surname"
                         #Surname="ngModel" required
                         [ngClass]="{'is-invalid': Surname.invalid && (Surname.touched || resumeForm.submitted) }">
                   </div>
@@ -62,12 +67,12 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <input type="text" class="form-control" [(ngModel)]="resume.phone" name="phone"
-                      placeholder="Enter phone number" #Phone="ngModel" required
+                      placeholder="Phone number" #Phone="ngModel" required
                       [ngClass]="{'is-invalid': Phone.invalid && (Phone.touched || resumeForm.submitted) }">
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"
-                      placeholder="Enter Email" #Email="ngModel" required
+                      placeholder="Email" #Email="ngModel" required
                       [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
                   </div>
 
@@ -80,11 +85,12 @@
           <div class="shadow-sm card">
               <div class="card-body">
                 <h4 class="card-title d-flex align-items-center">
-                  <i class="material-icons"> assignment </i>Personal Background</h4>
+                  <i class="material-icons mr-1"> assignment </i>Personal Background</h4>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <textarea  placeholder="Describe your personal background" type="text" class="form-control" [(ngModel)]="resume.personalBackground" name="personalBackground"
+                      <textarea  name="personalBackground" placeholder="Personal background" type="text" class="form-control"
+                      [(ngModel)]="resume.personalBackground" required
                         rows="4"></textarea>
                     </div>
                   </div>
@@ -97,18 +103,22 @@
             <div class="card-body">
               <div class="d-flex justify-content-between card-title">
                 <h4 class="d-flex align-items-center">
-                  <i class="material-icons">
+                  <i class="material-icons mr-1">
                       work
                   </i>
                   Work Experience</h4>
-                <button class="btn btn-primary" (click)="addExperience()">+</button>
+                  <div class="d-flex justify-content-between card-title">
+                  <button class="btn btn-primary mr-1" (click)="addExperience()">+</button>
+                  <button class="btn btn-primary" (click)="removeExperience()">-</button>
+                  </div>
+
               </div>
               <div class="row" *ngFor="let ex of resume.experiences; let i=index">
                 <div class="col-md-6">
                   <div class="form-group">
                     <input type="text" class="form-control" name="employer{{i}}" [(ngModel)]="ex.employer"
-                      placeholder="Company name" #Employer="ngModel" required
-                      [ngClass]="{'is-invalid': Employer.invalid && (Employer.touched || resumeForm.submitted) }">
+                      placeholder="Company name" #Employer="ngModel"
+                      >
                   </div>
                   <div class="form-group">
                     <div class="form-group">
@@ -120,21 +130,21 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <input type="text" class="form-control" name="position{{i}}" [(ngModel)]="ex.position"
-                      placeholder="Position" #position="ngModel" required
-                      [ngClass]="{'is-invalid': position.invalid && (position.touched || resumeForm.submitted) }">
+                      placeholder="Position" #position="ngModel"
+                      >
                   </div>
 
                     <div class="form-group">
                       <input  type="date" class="form-control" name="result{{i}}" [(ngModel)]="ex.startDate"
-                        placeholder="Start Date" #startDate="ngModel" required
-                        [ngClass]="{'is-invalid': startDate.invalid && (startDate.touched || resumeForm.submitted) }">
+                        placeholder="Start Date" #startDate="ngModel"
+                        >
                     </div>
 
 
                     <div class="form-group">
                       <input  type="date" class="form-control" name="endDate{{i}}" [(ngModel)]="ex.endDate"
-                        placeholder="End Date" #endDate="ngModel" required
-                        [ngClass]="{'is-invalid': endDate.invalid && (endDate.touched || resumeForm.submitted) }">
+                        placeholder="End Date" #endDate="ngModel"
+                        >
                     </div>
 
                 </div>
@@ -147,19 +157,23 @@
             <div class="card-body">
               <div class="d-flex justify-content-between card-title">
                 <h4 class="d-flex align-items-center">
-                  <i class="material-icons">
+                  <i class="material-icons mr-1">
                     school
                   </i>
                   Education</h4>
-                <button class="btn btn-primary" (click)="addEducation()">+</button>
-              </div>
+                  <div class="d-flex justify-content-between card-title">
+                    <button class="btn btn-primary mr-1" (click)="addEducation()">+</button>
+                    <button class="btn btn-primary" (click)="removeEducation()">-</button>
+                    </div>
+
+                </div>
               <div class="row" *ngFor="let ed of resume.educations; let i=index">
                 <div class="col-md-3">
                   <div class="form-group">
                     <select class="form-control" placeholder="Degree" name="degree{{i}}" [(ngModel)]="ed.degree"
                       #Degree="ngModel" required
                       [ngClass]="{'is-invalid': Degree.invalid && (Degree.touched || resumeForm.submitted) }">
-                      <option value="" disabled>Select your degree</option>
+                      <option value="" disabled>Select degree</option>
                       <option [value]="d" *ngFor="let d of degrees">{{d}}</option>
                     </select>
                   </div>
@@ -195,29 +209,32 @@
               <div class="card-body">
                 <div class="d-flex justify-content-between card-title">
                   <h4 class="d-flex align-items-center">
-                    <i class="material-icons">
+                    <i class="material-icons mr-1">
                         language
                     </i>
                     Languages</h4>
-                  <!-- <button class="btn btn-primary" (click)="addLanguage()">+</button> -->
                 </div>
 
 
                 <div class="card-body">
                     <div class="d-flex justify-content-between card-title">
                       <h4 class="d-flex align-items-center">
-                        <i class="material-icons">
+                        <i class="material-icons mr-1">
                             book
                         </i>
                         Add language</h4>
-                        <button class="btn btn-primary" (click)="addLanguage()">+</button>
-                    </div>
+                        <div class="d-flex justify-content-between card-title">
+                          <button class="btn btn-primary mr-1" (click)="addLanguage()">+</button>
+                          <button class="btn btn-primary" (click)="removeLanguage()">-</button>
+                          </div>
+
+                      </div>
 
                     <div class="row" *ngFor="let s of resume.languages; let i=index">
                       <div class="col-md-3">
                           <div class="form-group">
                                 <select type="text"  class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
-                                placeholder="Enter language" #Language="ngModel" required
+                                placeholder="Language" #Language="ngModel" required
                                 [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
                               <option value="" disabled>Select language</option>
                               <option [value]="l" *ngFor="let l of spokenLanguages">{{l}}</option>
@@ -246,7 +263,7 @@
               <div class="card-body">
                 <div class="d-flex justify-content-between card-title">
                   <h4 class="d-flex align-items-center">
-                    <i class="material-icons">
+                    <i class="material-icons mr-1">
                         memory
                     </i>
                     IT Knowledge</h4>
@@ -255,17 +272,21 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between card-title">
                       <h4 class="d-flex align-items-center">
-                        <i class="material-icons">
+                        <i class="material-icons mr-1">
                             build
                         </i>
                         Skills</h4>
-                        <button class="btn btn-primary" (click)="additKnowledge()">+</button>
-                    </div>
+                        <div class="d-flex justify-content-between card-title">
+                          <button class="btn btn-primary mr-1" (click)="additKnowledge()">+</button>
+                          <button class="btn btn-primary" (click)="removeitKnowledge()">-</button>
+                          </div>
+
+                      </div>
                     <div class="row" *ngFor="let itKnowledge of resume.itKnowledge; let i=index">
                       <div class="col-md-3">
                           <div class="form-group">
                                 <select type="text"  class="form-control" name="itSkill{{i}}" [(ngModel)]="itKnowledge.itSkill"
-                                placeholder="Enter a skill" #itSkill="ngModel" required
+                                placeholder="Skill" #itSkill="ngModel" required
                                 [ngClass]="{'is-invalid': itSkill.invalid && (itSkill.touched || resumeForm.submitted) }">
                               <option value="" disabled>Select skill</option>
                               <option [value]="skill" *ngFor="let skill of languages">{{skill}}</option>
@@ -278,7 +299,7 @@
                               <select class="form-control" placeholder="Level" name="level{{i}}" [(ngModel)]="itKnowledge.level"
                                 #Level="ngModel" required
                                 [ngClass]="{'is-invalid': Level.invalid && (Level.touched || resumeForm.submitted) }">
-                                <option value="">Level</option>
+                                <option value="" disabled>Level</option>
                                 <option [value]="level" *ngFor="let level of levels">{{level}}</option>
                               </select>
                             </div>
@@ -296,10 +317,10 @@
           <div class="card p-4">
               <div class="form-group">
                 <label class="h4 mb-3" for=""><h4 class="d-flex align-items-center">
-                    <i class="material-icons">
+                    <i class="material-icons mr-1">
                         insert_photo
                     </i>
-                    Add Profile picture</h4></label>
+                    Profile picture</h4></label>
                 <input type="file" class="form-control-file" (change)="fileChanged($event)" aria-describedby="fileHelpId">
               </div>
               <img *ngIf="resume.profilePic" [src]="resume.profilePic" class="img-thumbnail">
@@ -307,24 +328,27 @@
           <div class="card p-4">
             <div class="form-group">
                 <label class="h4 mb-3" for=""><h4 class="d-flex align-items-center">
-                    <i class="material-icons">
+                    <i class="material-icons mr-1">
                         work
                     </i>
-                    Your position</h4></label>
+                    Position</h4></label>
               <select class="form-control" placeholder="Position" name="position" [(ngModel)]="resume.position"
                 #Position="ngModel" required
                 [ngClass]="{'is-invalid': Position.invalid && (Position.touched || resumeForm.submitted) }">
-                <option value="" disabled>Select your position</option>
+                <option value="" disabled>Select position</option>
                 <option  placeholder="Position" [value]="position" *ngFor="let position of positions">{{position}}</option>
               </select>
             </div>
+        </div>
+        <div class="card p-4">
+          <mat-checkbox ngModel #termsButton="ngModel" name="termsButton"required color="warn">Agree to terms and conditions</mat-checkbox>
         </div>
 
 
         <div class="shadow-sm card action-buttons">
 
           <button type="submit" [disabled]="!resumeForm.valid" (click)="submitForm()"
-            class="btn btn-primary d-flex align-items-center justify-content-center">
+            class="btn btn-primary d-flex  align-items-center justify-content-center">
             <i class="material-icons">
                 save_alt
             </i> <span>Submit</span>
@@ -348,9 +372,9 @@
 
   <div  fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="5px;">
 
-     <h2>Contact Us</h2>
+     <h2 class="application-entry">Contact Us</h2>
 
-      <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
+      <p class="application-entry">If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
 
   </div>
 
@@ -359,7 +383,7 @@
     <div>
           <div></div>
           <mat-icon>home</mat-icon>
-          <p>Address</p>
+          <div></div>
           <p>Rr. "Andon Zako Cajupi"  <br />
            Nd.14, H.14, Ap.1<br />
            Tirana
@@ -369,7 +393,7 @@
     <div>
               <div></div>
               <mat-icon> phone</mat-icon>
-              <p >Phone</p>
+              <div></div>
               <a href="tel: +355 44 81 3008"> +355 44 81 3008</a><br>
               <a href="tel:+355 69 33 22 090">+355 69 33 22 090</a><br>
               <a href="tel:+355692610893">+355 69 26 10 893</a>
@@ -379,7 +403,7 @@
     <div>
               <div></div>
               <mat-icon>mail</mat-icon>
-              <p>Email</p>
+              <div></div>
               <p>Sent an email at:</p>
               <p><a href="mailto:info@thetechpro.be" title="">jobs@thetechpro.be</a></p>
     </div>
@@ -387,7 +411,7 @@
     <div>
               <div></div>
               <mat-icon>group_add</mat-icon>
-              <p>Social</p>
+              <div></div>
               <p>Connect with us:</p>
               <a href="https://www.linkedin.com/company/techpro-be/">Linkedin</a>
     </div>
@@ -401,22 +425,22 @@
 
   <div  fxLayout="column"  fxLayoutGap="5px;" fxLayoutAlign="center center" class="txt-centered">
       <div>
-        <h2>Contact Us</h2>
+        <h2 class="application-entry">Contact Us</h2>
       </div>
 
  <div>
-   <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
+   <p class="application-entry">If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
  </div>
 
 
   </div>
 
-  <div  fxLayout="column"  fxLayoutAlign="space-evenly center" class="padding-ref">
+  <div  fxLayout="column"   fxLayoutGap="10px" fxLayoutAlign="space-evenly center" class="padding-ref">
 
     <div>
           <div></div>
           <mat-icon>home</mat-icon>
-          <p>Address</p>
+          <div></div>
           <p>Rr. "Andon Z. Cajupi"  <br />
            Nd.14, H.14, Ap.1<br />
            Tirana
@@ -426,7 +450,7 @@
     <div>
               <div></div>
               <mat-icon> phone</mat-icon>
-              <p >Phone</p>
+              <div></div>
               <a href="tel: +355 44 81 3008"> +355 44 81 3008</a><br>
               <a href="tel:+355 69 33 22 090">+355 69 33 22 090</a><br>
               <a href="tel:+355692610893">+355 69 26 10 893</a>
@@ -436,7 +460,7 @@
     <div>
               <div></div>
               <mat-icon>mail</mat-icon>
-              <p>Email</p>
+              <div></div>
               <p>Sent an email at:</p>
               <p><a href="mailto:info@thetechpro.be" title="">jobs@thetechpro.be</a></p>
     </div>
@@ -444,9 +468,9 @@
     <div>
               <div></div>
               <mat-icon>group_add</mat-icon>
-              <p>Social</p>
+              <div></div>
               <p>Connect with us:</p>
-              <a href="https://www.linkedin.com/company/techpro-be/">Linkedin</a>
+              <a href="www.linkedin.com/company/techpro-be/">Linkedin</a>
     </div>
 
   </div>
@@ -459,11 +483,6 @@
         <span>© 2019 <a href="https://www.thetechpro.be" data-title="Programming Company in Albania">TECHPRO</a> by <a href="https://www.odo.thetechpro.be" data-title="Company in Albania">O.D.O.</a> All Rights Reserved.
         </span>
 
-  </div>
+  </div>  <!--Footer-->
 
 
-  <script>
-    $( function() {
-      $( "#datepicker" ).datepicker();
-    } );
-    </script>

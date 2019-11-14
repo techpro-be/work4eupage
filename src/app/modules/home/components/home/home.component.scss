@@ -19,6 +19,7 @@
   text-align: center;
   display: inline-block;
   padding: 10px;
+  color:#000000;
 }
 
 .techpro-gif{
@@ -35,8 +36,9 @@
 }
 
 .img-style {
-  width:100%;
-  height:100%;
+  width: 65%;
+  height: 100%;
+  padding: 13px;
 }
 
 .bg-image-mobile{
@@ -44,6 +46,7 @@
   width:320px;
   margin-left: 7%;
   height:70px;
+  margin-top: 15px;
 }
 
 .example-headers-align .mat-expansion-panel-header-title,
@@ -79,11 +82,21 @@ mat-form-field {
   margin-left: 1 rem;
 }
 
+.mr-1{
+  margin-left: 5px;
+}
+
 button span{
   font-size: 22px;
 }
 .button-color-yellow{
-  background-color: #dee202 !important;
+  background-color: #fecd06 !important;
+  border: none
+}
+
+.button-color-reset{
+  background-color: #3f4348 !important;
+  border: none
 }
 
 .action-buttons button{

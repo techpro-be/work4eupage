@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material';
 import { Resume, Education, Experience, Language, itKnowledge } from '../../resume';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(
+  constructor(private router: Router,
               private afs: AngularFirestore,
               private snackBar: MatSnackBar) {
 
@@ -286,10 +287,11 @@ export class HomeComponent implements OnInit {
     this.resumeCollection
     .add(param)
     .then( resp => {
-        this.snackBar.open('Your CV has been submitted successfully ', null, {
-            duration: 3000
-          });
-        this.resume = new Resume();
+      this.router.navigate(['/submission']);
+        // this.snackBar.open('Your CV has been submitted successfully ', null, {
+        //     duration: 3000
+        //   });
+      this.resume = new Resume();
         });
   }
 
@@ -307,6 +309,22 @@ export class HomeComponent implements OnInit {
   }
   additKnowledge() {
     this.resume.itKnowledge.push(new itKnowledge());
+  }
+
+  removeExperience() {
+    this.resume.experiences.pop();
+  }
+
+  removeEducation() {
+    this.resume.educations.pop();
+  }
+
+  removeLanguage() {
+    this.resume.languages.pop();
+  }
+
+  removeitKnowledge() {
+    this.resume.itKnowledge.pop();
   }
 
 
