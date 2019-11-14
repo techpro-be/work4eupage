@@ -125,14 +125,14 @@
                   </div>
 
                     <div class="form-group">
-                      <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="result{{i}}" [(ngModel)]="ex.startDate"
+                      <input  type="date" class="form-control" name="result{{i}}" [(ngModel)]="ex.startDate"
                         placeholder="Start Date" #startDate="ngModel" required
                         [ngClass]="{'is-invalid': startDate.invalid && (startDate.touched || resumeForm.submitted) }">
                     </div>
 
 
                     <div class="form-group">
-                      <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="endDate{{i}}" [(ngModel)]="ex.endDate"
+                      <input  type="date" class="form-control" name="endDate{{i}}" [(ngModel)]="ex.endDate"
                         placeholder="End Date" #endDate="ngModel" required
                         [ngClass]="{'is-invalid': endDate.invalid && (endDate.touched || resumeForm.submitted) }">
                     </div>
@@ -173,14 +173,15 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="result{{i}}" [(ngModel)]="ed.startingYear"
+                    <input  type="date"  class="form-control" name="result{{i}}" [(ngModel)]="ed.startingYear"
                       placeholder="Starting year" #startingYear="ngModel" required
                       [ngClass]="{'is-invalid': startingYear.invalid && (startingYear.touched || resumeForm.submitted) }">
+
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" name="passingYear{{i}}" [(ngModel)]="ed.passingYear"
+                    <input type="date" class="form-control" name="passingYear{{i}}" [(ngModel)]="ed.passingYear"
                       placeholder="Passing Year" #PassingYear="ngModel" required
                       [ngClass]="{'is-invalid': PassingYear.invalid && (PassingYear.touched || resumeForm.submitted) }">
                   </div>
@@ -461,3 +462,8 @@
   </div>
 
 
+  <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
