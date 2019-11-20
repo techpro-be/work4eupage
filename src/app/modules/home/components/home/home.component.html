@@ -181,7 +181,7 @@
                 <div class="col-md-3">
                   <div class="form-group">
                     <input type="text" class="form-control" name="college{{i}}" [(ngModel)]="ed.college"
-                      placeholder="University name" #College="ngModel" required
+                      placeholder="Program&University Name" #College="ngModel" required
                       [ngClass]="{'is-invalid': College.invalid && (College.touched || resumeForm.submitted) }">
                   </div>
                 </div>
@@ -366,9 +366,9 @@
   </form>
 </div>
 
+     <!--For web-->
 
-
-<div fxLayout="column" class="padding-ref" fxHide fxShow.gt-sm >
+<!-- <div fxLayout="column" class="padding-ref" fxHide fxShow.gt-sm >
 
   <div  fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="5px;">
 
@@ -418,10 +418,11 @@
 
   </div>
 
-</div>     <!--For web-->
+</div> -->
 
+    <!--For mobile-->
 
-<div fxLayout="column" class="padding-ref" fxShow fxHide.gt-sm  fxLayoutAlign="center center"  >
+<!-- <div fxLayout="column" class="padding-ref" fxShow fxHide.gt-sm  fxLayoutAlign="center center"  >
 
   <div  fxLayout="column"  fxLayoutGap="5px;" fxLayoutAlign="center center" class="txt-centered">
       <div>
@@ -475,14 +476,167 @@
 
   </div>
 
-</div>  <!--For mobile-->
+</div>   -->
 
 
-  <div fxLayout="row" fxLayoutAlign="space-evenly center" class="footer-class" >
+
+  <!-- <div fxLayout="row" fxLayoutAlign="space-evenly center" class="footer-class" >
 
         <span>© 2019 <a href="https://www.thetechpro.be" data-title="Programming Company in Albania">TECHPRO</a> by <a href="https://www.odo.thetechpro.be" data-title="Company in Albania">O.D.O.</a> All Rights Reserved.
         </span>
 
-  </div>  <!--Footer-->
+  </div>  Footer -->
+
+  <!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Footer links -->
+    <div class="row text-center text-md-left mt-3 pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">TechPro</h6>
+        <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+        <p>
+          <a href="https://work.thetechpro.be">Applications</a>
+        </p>
+        <!-- <p>
+          <a href="#!">MDWordPress</a>
+        </p>
+        <p>
+          <a href="#!">BrandFlow</a>
+        </p>
+        <p>
+          <a href="#!">Bootstrap Angular</a>
+        </p> -->
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+        <p>
+          <a href="https://www.thetechpro.be/index.html">About us</a>
+        </p>
+        <p>
+          <a href="https://www.thetechpro.be/terms.html">Terms & Conditions</a>
+        </p>
+        <p>
+          <a href="www.linkedin.com/company/techpro-be/">Linkedin</a>
+        </p>
+       <!--<p>
+          <a href="#!">Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p> -->
+      </div>
+
+      <!-- Grid column -->
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+        <p>
+          <mdb-icon fas icon="home" class="mr-3"></mdb-icon> Rr. "Andon Z. Cajupi",Nd.14, H14, Ap.1 Tirana Albania
+        </p>
+        <p>
+          <mdb-icon fas icon="envelope" class="mr-3"></mdb-icon> jobs@thetechpro.be
+        </p>
+        <p>
+          <mdb-icon fas icon="phone" class="mr-3"></mdb-icon> + 01 234 567 88
+        </p>
+        <p>
+          <mdb-icon fas icon="phone" class="mr-3"></mdb-icon> +355 44 81 3008
+        </p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Footer links -->
+
+    <hr>
+
+    <!-- Grid row -->
+    <div fxLayoutAlign="center center">
+
+      <!-- Grid column -->
+      <div  >
+
+        <!--Copyright-->
+        <p class="text-center text-md-left">© 2019 <b>TECHPRO </b>
+          <a href="https://mdbootstrap.com/education/bootstrap/">
+            <strong> by O.D.O. All Rights Reserved. </strong>
+          </a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+
+      <!-- <div class="col-md-5 col-lg-4 ml-lg-0">
+
+
+        <div class="text-center text-md-right">
+
+            <a href="https://www.linkedin.com/company/techpro-be/">
+              <mdb-icon fab icon="linkedin"></mdb-icon>
+            </a>
+
+           <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a mdbBtn floating="true" size="sm" class="rgba-white-slight mx-1" mdbWavesEffect>
+                <mdb-icon fab icon="facebook"></mdb-icon>
+              </a>
+              <a href="https://www.linkedin.com/company/techpro-be/">
+                <mdb-icon fab icon="linkedin"></mdb-icon></a>
+            </li>
+            <li class="list-inline-item">
+              <a mdbBtn floating="true" size="sm" class="rgba-white-slight mx-1" mdbWavesEffect>
+                <mdb-icon fab icon="twitter"></mdb-icon>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a mdbBtn floating="true" size="sm" class="rgba-white-slight mx-1" mdbWavesEffect>
+                <mdb-icon fab fab icon="google-plus"></mdb-icon>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a mdbBtn floating="true" size="sm" class="rgba-white-slight mx-1" mdbWavesEffect>
+                <mdb-icon fab icon="linkedin"></mdb-icon>
+              </a>
+
+            </li>
+          </ul>
+        </div>
+
+    </div> -->
+
+    <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+</footer>
+<!-- Footer -->
 
 
