@@ -13,18 +13,6 @@ const routes: Routes = [
     path: 'submission',
     component: SubmissionComponent
   }
-
-  // {
-  //   path: '',
-  //   component: HomeComponent,
-  //   children: [
-  //     {
-  //       path: 'submission',
-  //       pathMatch: 'full',
-  //       component: SubmissionComponent
-  //     }
-  //   ]
-  // }
 ];
 
 @NgModule({
