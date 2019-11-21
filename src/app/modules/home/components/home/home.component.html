@@ -1,13 +1,34 @@
 
-<div fxHide fxShow.gt-sm  fxLayoutAlign="center center" style="padding: 20px;">
-  <img src="assets/images/logofinal.svg" class="img-style" alt="Tech Pro">    <!-- Header for web-->
+<div fxHide fxShow.gt-sm  fxLayoutAlign="center center" style="margin-bottom: 20px;">
+
+  <div class="hero">
+      <div class="hero-inner">
+          <h1 style="color: white;">Welcome to TechPro</h1>
+          <div fxLayout="row">
+            <a href="#userForm" class="header-button">User</a>
+          <a href="" class="header-button">Customer</a>
+          </div>
+
+      </div>
+
+  </div>    <!-- Header for web-->
 </div>
 
-<div fxShow.xs fxHide.gt-sm class="bg-image-mobile margin-b">
+<div fxShow.xs fxHide.gt-sm >
+    <div class="hero">
+        <div class="hero-inner">
+            <h1 style="color: white;">Welcome to TechPro</h1>
+            <div fxLayout="column">
+              <a href="#userForm" class="header-button">User</a>
+            <a href="" class="header-button">Customer</a>
+            </div>
 
+        </div>
+
+    </div>
 </div>  <!-- Header for mobile-->
 
-<div fxLayout="column"  fxLayoutAlign="center center">
+<div fxLayout="column"  fxLayoutAlign="center center" id="userForm" style="padding: 20px;">
         <div fxLayout="row" fxLayoutAlign="start center" class="techpro-gif" >
           <img src="assets/images/techprogif.gif">
         </div>
