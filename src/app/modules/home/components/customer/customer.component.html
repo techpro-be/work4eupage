@@ -1,0 +1,151 @@
+<div fxLayout="column"  fxLayoutAlign="center center"  style="padding: 20px;">
+    <div fxLayout="row" fxLayoutAlign="start center" class="techpro-gif" >
+      <img src="assets/images/techprogif.gif">
+    </div>
+    <div>
+        <h1 class="application-entry">Wanna work with us?</h1>
+    </div>
+
+    <div fxLayoutAlign="center center">
+
+      <h5 class="application-entry">
+          Our expertise doesn’t just hinge on mastering the latest technologies, but knowing when and where to use them to develop your unique solution. <br> We treat your project as if it was our own. We consider ourselves to be a high-value provider – challenging work done with top quality results at low prices.
+      </h5>
+
+  </div>
+  </div>
+
+  <div class="container-fluid">
+    <form #projectForm="ngForm">
+      <div class="row" fxLayoutAlign="center center">
+
+        <div class="col-md-8">
+
+            <!-- Personal details -->
+            <div class="shadow-sm card">
+              <div class="card-body">
+                <!-- <h4 class="card-title d-flex ml-1 align-items-center">
+                  Reach out to us, <br>
+                Describe your project</h4> -->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <h6 class="card-title d-flex ml-1 align-items-center">
+                            Choose a development category</h6>
+                      <!-- <input type="text" class="form-control" [(ngModel)]="project.devCategory" name="devCategory" placeholder="Name of your project"
+                        #devCategory="ngModel" required
+                        [ngClass]="{'is-invalid': devCategory.invalid && (devCategory.touched || projectForm.submitted) }"> -->
+
+                        <select class="form-control"  name="devCategory" [(ngModel)]="project.devCategory"
+                          #devCategory="ngModel" required
+                          [ngClass]="{'is-invalid': devCategory.invalid && (devCategory.touched || projectForm.submitted) }">
+                          <option value="" disabled>Select category</option>
+                          <option  placeholder="Position" [value]="devCategory" *ngFor="let devCategory of devCategories">{{devCategory}}</option>
+                        </select>
+                    </div>
+
+
+                   <div>
+
+                   </div>
+
+
+                    <h6 class="card-title d-flex ml-1 align-items-center">
+                            Choose the type of contract</h6>
+                    <div class="form-group d-flex" fxLayoutGap="20px">
+
+                      <!-- <div>
+                        <mat-checkbox [(ngModel)]="project.contractType" name="contractType">Outsourcing</mat-checkbox>
+                      </div>
+                      <div>
+                          <mat-checkbox [(ngModel)]="project.contractType" name="contractType">I dont know, advise me!</mat-checkbox>
+                      </div> -->
+
+                    </div>
+                    <div class="form-group d-flex"  fxLayoutGap="20px">
+
+                        <!-- <div>
+                          <mat-checkbox>Check me!</mat-checkbox>
+                        </div>
+                        <div>
+                            <mat-checkbox>Check me!</mat-checkbox>
+                          </div>
+                          <div>
+                              <mat-checkbox>I dont know, advise me!</mat-checkbox>
+                          </div> -->
+
+
+                      </div>
+                  </div>
+
+
+                  <div class="col-md-6">
+
+                      <h6 class="card-title d-flex ml-1 align-items-center">
+                          Project Description</h6>
+                      <div class="form-group">
+                        <input type="text" class="form-control" [(ngModel)]="project.projectName" name="projectName" placeholder="Name of your project"
+                          #projectName="ngModel" required
+                          [ngClass]="{'is-invalid': projectName.invalid && (projectName.touched || projectForm.submitted) }">
+                      </div>
+                      <div class="form-group">
+                          <textarea  name="projectDescription" placeholder="Describe your project" type="text" class="form-control"
+                          [(ngModel)]="project.projectDescription" required
+                            rows="3"></textarea>
+                      </div>
+
+                      <h6 class="card-title d-flex ml-1 align-items-center">
+                          Contact Details</h6>
+                      <div class="form-group">
+                        <input type="text" class="form-control" [(ngModel)]="project.name" name="name" placeholder="First Name"
+                          #Name="ngModel" required
+                          [ngClass]="{'is-invalid': Name.invalid && (Name.touched || projectForm.submitted) }">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" [(ngModel)]="project.surname" name="surname" placeholder="Last Name"
+                          #Surname="ngModel" required
+                          [ngClass]="{'is-invalid': Surname.invalid && (Surname.touched || projectForm.submitted) }">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" [(ngModel)]="project.phone" name="phone" placeholder="Phone"
+                          #Phone="ngModel" required
+                          [ngClass]="{'is-invalid': Phone.invalid && (Phone.touched || projectForm.submitted) }">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" [(ngModel)]="project.email" name="email" placeholder="Email"
+                          #Email="ngModel" required
+                          [ngClass]="{'is-invalid': Email.invalid && (Email.touched || projectForm.submitted) }">
+                      </div>
+                      <div class="card p-4">
+                          <mat-checkbox ngModel #termsButton="ngModel" name="termsButton"required color="warn">Agree to  <a href="https://www.thetechpro.be/terms.html" style="text-decoration: none;" target="_blank">Terms & Conditions</a></mat-checkbox>
+                        </div>
+                      <div class="shadow-sm card action-buttons">
+
+                          <button type="submit" [disabled]="!projectForm.valid" (click)="submitForm()"
+                            class="btn btn-primary  d-flex  align-items-center justify-content-center">
+                            <i class="material-icons">
+                                save_alt
+                            </i> <span>Submit</span>
+                          </button>
+                          <!-- <button type='reset' (click)="resetForm()"
+                            class="btn btn-primary  button-color-yellow d-flex align-items-center justify-content-center">
+                            <i class="material-icons">
+                                clear_all
+                            </i><span>Reset</span>
+                          </button> -->
+                        </div>
+                    </div>
+
+                </div>
+
+              </div>
+
+            </div>
+        </div>  <!--End of details column-->
+
+
+
+      </div>
+    </form>
+  </div>
+

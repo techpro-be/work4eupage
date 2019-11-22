@@ -215,7 +215,6 @@ html, body {
   min-height: 100%;
 }
 
-
 h1 {
   font-size: 26px;
   display: block;
@@ -226,28 +225,3 @@ h1 {
   font-family: 'Archivo Narrow', sans-serif;
 }
 
-.made-with-love {
-position: fixed;
-left: 0;
-width: 100%;
-bottom: 10px;
-text-align: center;
-font-size: 10px;
-z-index: 9999;
-font-family: arial;
-color: #9BB5EB;
-}
-.made-with-love i {
-font-style: normal;
-color: #F50057;
-font-size: 14px;
-position: relative;
-top: 2px;
-}
-.made-with-love a {
-color: #9BB5EB;
-text-decoration: none;
-}
-.made-with-love a:hover {
-text-decoration: underline;
-}

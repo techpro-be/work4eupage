@@ -22,7 +22,7 @@ import {
   MatStepperModule,
 } from '@angular/material';
 import { NgModule } from '@angular/core';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   imports: [
     MatButtonModule,
@@ -35,6 +35,7 @@ import { NgModule } from '@angular/core';
     MatListModule,
     MatTabsModule,
     MatCardModule,
+    MatGridListModule,
     MatSelectModule,
     MatDialogModule,
     MatTableModule,
@@ -62,6 +63,7 @@ import { NgModule } from '@angular/core';
     MatDialogModule,
     MatTableModule,
     MatSortModule,
+    MatGridListModule,
     MatPaginatorModule,
     MatSnackBarModule,
     MatMenuModule,

@@ -4,11 +4,15 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { SubmissionComponent } from './components/submission/submission.component';
+import { UserComponent } from './components/user/user.component';
+import { CustomerComponent } from './components/customer/customer.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    SubmissionComponent
+    SubmissionComponent,
+    UserComponent,
+    CustomerComponent
   ],
   imports: [
     CommonModule,

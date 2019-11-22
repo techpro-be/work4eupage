@@ -36,13 +36,10 @@ export class itKnowledge {
 export class Education {
     degree: string;
     college: string;
+    program: string;
     passingYear: string;
     startingYear: number;
 }
-
-// export class Skill {
-//     value: string;
-// }
 
 export class Language {
   languageName: string;

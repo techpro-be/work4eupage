@@ -1,26 +1,29 @@
 
 <div fxHide fxShow.gt-sm  fxLayoutAlign="center center" style="margin-bottom: 20px;">
 
-  <div class="hero">
-      <div class="hero-inner">
-          <h1 style="color: white;">Welcome to TechPro</h1>
+  <div class="header-work4eu">
+      <div class="header-work4eu-inner">
+          <h1 style="color: white; ">WELCOME TO TECHPRO</h1>
           <div fxLayout="row">
-            <a href="#userForm" class="header-button">User</a>
-          <a href="" class="header-button">Customer</a>
+              <button  routerLink="user" mat-button class="header-button">User</button>
+              <button  routerLink="customer" mat-button class="header-button">Customer</button>
           </div>
 
       </div>
 
-  </div>    <!-- Header for web-->
-</div>
+  </div>
+</div>   <!-- Header for web-->
 
 <div fxShow.xs fxHide.gt-sm >
-    <div class="hero">
-        <div class="hero-inner">
-            <h1 style="color: white;">Welcome to TechPro</h1>
+    <div class="header-work4eu">
+        <div class="header-work4eu-inner">
+            <h1 style="color: white; font-size: 3em;">WELCOME TO TECHPRO</h1>
+
+            <div class="empty-div-img"></div>
+
             <div fxLayout="column">
-              <a href="#userForm" class="header-button">User</a>
-            <a href="" class="header-button">Customer</a>
+              <button  routerLink="user" mat-button class="header-button">User</button>
+              <button  routerLink="customer" mat-button class="header-button">Customer</button>
             </div>
 
         </div>
@@ -28,368 +31,7 @@
     </div>
 </div>  <!-- Header for mobile-->
 
-<div fxLayout="column"  fxLayoutAlign="center center" id="userForm" style="padding: 20px;">
-        <div fxLayout="row" fxLayoutAlign="start center" class="techpro-gif" >
-          <img src="assets/images/techprogif.gif">
-        </div>
-        <div>
-            <h1 class="application-entry">We're Hiring!</h1>
-        </div>
 
-        <div fxLayoutAlign="center center">
-
-          <h5 class="application-entry">
-            You have just finished your studies, or you already have IT experience ? <br>
-          You wanna work for European companies ?
-          Techpro is a Belgian company specialised in recruiting IT Workforce  <br>to
-          complete the team of European entreprises. Are you attracted by that
-          kind of challenge ? <br> Click the button to fill in the pre-selection,
-          and a member of our team will take contact with you shortly.
-          </h5>
-
-</div>
-</div>
-
-
-<div class="container-fluid">
-  <form #resumeForm="ngForm">
-    <div class="row">
-
-      <div class="col-md-8">
-
-          <!-- Personal details -->
-          <div class="shadow-sm card">
-            <div class="card-body">
-              <h4 class="card-title d-flex ml-1 align-items-center">
-                <i class="material-icons mr-1" >
-                    person_pin
-                </i>
-                Personal Details</h4>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Name"
-                      #Name="ngModel" required
-                      [ngClass]="{'is-invalid': Name.invalid && (Name.touched || resumeForm.submitted) }">
-                  </div>
-                  <div class="form-group">
-                      <input type="text" class="form-control" [(ngModel)]="resume.surname" name="surname" placeholder="Surname"
-                        #Surname="ngModel" required
-                        [ngClass]="{'is-invalid': Surname.invalid && (Surname.touched || resumeForm.submitted) }">
-                  </div>
-                  <div class="form-group">
-                    <div class="form-group">
-                      <textarea class="form-control" [(ngModel)]="resume.address" name="address" rows="1"
-                        placeholder="Address" #Address="ngModel" required
-                        [ngClass]="{'is-invalid': Address.invalid && (Address.touched || resumeForm.submitted) }"></textarea>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="resume.phone" name="phone"
-                      placeholder="Phone number" #Phone="ngModel" required
-                      [ngClass]="{'is-invalid': Phone.invalid && (Phone.touched || resumeForm.submitted) }">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"
-                      placeholder="Email" #Email="ngModel" required
-                      [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Personal Background -->
-          <div class="shadow-sm card">
-              <div class="card-body">
-                <h4 class="card-title d-flex align-items-center">
-                  <i class="material-icons mr-1"> assignment </i>Personal Background</h4>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <textarea  name="personalBackground" placeholder="Personal background" type="text" class="form-control"
-                      [(ngModel)]="resume.personalBackground" required
-                        rows="4"></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-          <!-- Work Experience -->
-          <div class="shadow-sm card">
-            <div class="card-body">
-              <div class="d-flex justify-content-between card-title">
-                <h4 class="d-flex align-items-center">
-                  <i class="material-icons mr-1">
-                      work
-                  </i>
-                  Work Experience</h4>
-                  <div class="d-flex justify-content-between card-title">
-                  <button class="btn btn-primary mr-1" (click)="addExperience()">+</button>
-                  <button class="btn btn-primary" (click)="removeExperience()">-</button>
-                  </div>
-
-              </div>
-              <div class="row" *ngFor="let ex of resume.experiences; let i=index">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="employer{{i}}" [(ngModel)]="ex.employer"
-                      placeholder="Company name" #Employer="ngModel"
-                      >
-                  </div>
-                  <div class="form-group">
-                    <div class="form-group">
-                      <textarea class="form-control" name="jobDescription{{i}}" [(ngModel)]="ex.jobDescription" rows="3"
-                        placeholder="Job Description"></textarea>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="position{{i}}" [(ngModel)]="ex.position"
-                      placeholder="Position" #position="ngModel"
-                      >
-                  </div>
-
-                    <div class="form-group">
-                      <input  type="date" class="form-control" name="result{{i}}" [(ngModel)]="ex.startDate"
-                        placeholder="Start Date" #startDate="ngModel"
-                        >
-                    </div>
-
-
-                    <div class="form-group">
-                      <input  type="date" class="form-control" name="endDate{{i}}" [(ngModel)]="ex.endDate"
-                        placeholder="End Date" #endDate="ngModel"
-                        >
-                    </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education -->
-          <div class="shadow-sm card">
-            <div class="card-body">
-              <div class="d-flex justify-content-between card-title">
-                <h4 class="d-flex align-items-center">
-                  <i class="material-icons mr-1">
-                    school
-                  </i>
-                  Education</h4>
-                  <div class="d-flex justify-content-between card-title">
-                    <button class="btn btn-primary mr-1" (click)="addEducation()">+</button>
-                    <button class="btn btn-primary" (click)="removeEducation()">-</button>
-                    </div>
-
-                </div>
-              <div class="row" *ngFor="let ed of resume.educations; let i=index">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <select class="form-control" placeholder="Degree" name="degree{{i}}" [(ngModel)]="ed.degree"
-                      #Degree="ngModel" required
-                      [ngClass]="{'is-invalid': Degree.invalid && (Degree.touched || resumeForm.submitted) }">
-                      <option value="" disabled>Select degree</option>
-                      <option [value]="d" *ngFor="let d of degrees">{{d}}</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="college{{i}}" [(ngModel)]="ed.college"
-                      placeholder="Program&University Name" #College="ngModel" required
-                      [ngClass]="{'is-invalid': College.invalid && (College.touched || resumeForm.submitted) }">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input  type="date"  class="form-control" name="result{{i}}" [(ngModel)]="ed.startingYear"
-                      placeholder="Starting year" #startingYear="ngModel" required
-                      [ngClass]="{'is-invalid': startingYear.invalid && (startingYear.touched || resumeForm.submitted) }">
-
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <input type="date" class="form-control" name="passingYear{{i}}" [(ngModel)]="ed.passingYear"
-                      placeholder="Passing Year" #PassingYear="ngModel" required
-                      [ngClass]="{'is-invalid': PassingYear.invalid && (PassingYear.touched || resumeForm.submitted) }">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Languages -->
-          <div class="shadow-sm card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between card-title">
-                  <h4 class="d-flex align-items-center">
-                    <i class="material-icons mr-1">
-                        language
-                    </i>
-                    Languages</h4>
-                </div>
-
-
-                <div class="card-body">
-                    <div class="d-flex justify-content-between card-title">
-                      <h4 class="d-flex align-items-center">
-                        <i class="material-icons mr-1">
-                            book
-                        </i>
-                        Add language</h4>
-                        <div class="d-flex justify-content-between card-title">
-                          <button class="btn btn-primary mr-1" (click)="addLanguage()">+</button>
-                          <button class="btn btn-primary" (click)="removeLanguage()">-</button>
-                          </div>
-
-                      </div>
-
-                    <div class="row" *ngFor="let s of resume.languages; let i=index">
-                      <div class="col-md-3">
-                          <div class="form-group">
-                                <select type="text"  class="form-control" name="language{{i}}" [(ngModel)]="s.languageName"
-                                placeholder="Language" #Language="ngModel" required
-                                [ngClass]="{'is-invalid': Language.invalid && (Language.touched || resumeForm.submitted) }">
-                              <option value="" disabled>Select language</option>
-                              <option [value]="l" *ngFor="let l of spokenLanguages">{{l}}</option>
-                            </select>
-
-                              </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="form-group">
-                              <select class="form-control" placeholder="Level" name="languageLevel{{i}}" [(ngModel)]="s.languageLevel"
-                                #languageLevel="ngModel" required
-                                [ngClass]="{'is-invalid': languageLevel.invalid && (languageLevel.touched || resumeForm.submitted) }">
-                                <option value="" disabled>Language level</option>
-                                <option [value]="level" *ngFor="let level of languageLevels">{{level}}</option>
-                              </select>
-                            </div>
-                      </div>
-                    </div>
-                  </div>
-
-              </div>
-          </div>
-
-          <!-- itKnowledge -->
-          <div class="shadow-sm card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between card-title">
-                  <h4 class="d-flex align-items-center">
-                    <i class="material-icons mr-1">
-                        memory
-                    </i>
-                    IT Knowledge</h4>
-                </div>
-
-                <div class="card-body">
-                    <div class="d-flex justify-content-between card-title">
-                      <h4 class="d-flex align-items-center">
-                        <i class="material-icons mr-1">
-                            build
-                        </i>
-                        Skills</h4>
-                        <div class="d-flex justify-content-between card-title">
-                          <button class="btn btn-primary mr-1" (click)="additKnowledge()">+</button>
-                          <button class="btn btn-primary" (click)="removeitKnowledge()">-</button>
-                          </div>
-
-                      </div>
-                    <div class="row" *ngFor="let itKnowledge of resume.itKnowledge; let i=index">
-                      <div class="col-md-3">
-                          <div class="form-group">
-                                <select type="text"  class="form-control" name="itSkill{{i}}" [(ngModel)]="itKnowledge.itSkill"
-                                placeholder="Skill" #itSkill="ngModel" required
-                                [ngClass]="{'is-invalid': itSkill.invalid && (itSkill.touched || resumeForm.submitted) }">
-                              <option value="" disabled>Select skill</option>
-                              <option [value]="skill" *ngFor="let skill of languages">{{skill}}</option>
-                            </select>
-
-                              </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="form-group">
-                              <select class="form-control" placeholder="Level" name="level{{i}}" [(ngModel)]="itKnowledge.level"
-                                #Level="ngModel" required
-                                [ngClass]="{'is-invalid': Level.invalid && (Level.touched || resumeForm.submitted) }">
-                                <option value="" disabled>Level</option>
-                                <option [value]="level" *ngFor="let level of levels">{{level}}</option>
-                              </select>
-                            </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-          </div>
-
-      </div>  <!--End of details column-->
-
-
-       <!-- Photo and submit-->
-      <div class="col-md-4">
-          <div class="card p-4">
-              <div class="form-group">
-                <label class="h4 mb-3" for=""><h4 class="d-flex align-items-center">
-                    <i class="material-icons mr-1">
-                        insert_photo
-                    </i>
-                    Profile picture</h4></label>
-                <input type="file" class="form-control-file" (change)="fileChanged($event)" aria-describedby="fileHelpId">
-              </div>
-              <img *ngIf="resume.profilePic" [src]="resume.profilePic" class="img-thumbnail">
-          </div>
-          <div class="card p-4">
-            <div class="form-group">
-                <label class="h4 mb-3" for=""><h4 class="d-flex align-items-center">
-                    <i class="material-icons mr-1">
-                        work
-                    </i>
-                    Position</h4></label>
-              <select class="form-control" placeholder="Position" name="position" [(ngModel)]="resume.position"
-                #Position="ngModel" required
-                [ngClass]="{'is-invalid': Position.invalid && (Position.touched || resumeForm.submitted) }">
-                <option value="" disabled>Select position</option>
-                <option  placeholder="Position" [value]="position" *ngFor="let position of positions">{{position}}</option>
-              </select>
-            </div>
-        </div>
-        <div class="card p-4">
-          <mat-checkbox ngModel #termsButton="ngModel" name="termsButton"required color="warn">Agree to terms and conditions</mat-checkbox>
-        </div>
-
-
-        <div class="shadow-sm card action-buttons">
-
-          <button type="submit" [disabled]="!resumeForm.valid" (click)="submitForm()"
-            class="btn btn-primary d-flex  align-items-center justify-content-center">
-            <i class="material-icons">
-                save_alt
-            </i> <span>Submit</span>
-          </button>
-          <button type='reset' (click)="resetForm()"
-            class="btn btn-primary  button-color-yellow d-flex align-items-center justify-content-center">
-            <i class="material-icons">
-                clear_all
-            </i><span>Reset</span>
-          </button>
-        </div>  <!--End of submit column-->
-      </div>  <!--End of photo and submit  column-->
-
-    </div>
-  </form>
-</div>
-
-
-
-  <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
 
   <!-- Footer Links -->
@@ -412,11 +54,11 @@
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
         <p>
-          <a href="work.thetechpro.be">Home</a>
+          <a href="work.thetechpro.be" target="_blank">Home</a>
         </p>
 
         <p>
-          <a href="https://www.thetechpro.be/services.html">Services</a>
+          <a href="https://www.thetechpro.be/services.html" target="_blank">Services</a>
         </p>
 
       </div>
@@ -529,6 +171,6 @@
   <!-- Footer Links -->
 
 </footer>
-<!-- Footer -->
+
 
 
