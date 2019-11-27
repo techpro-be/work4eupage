@@ -1,0 +1,48 @@
+<mat-toolbar>
+  <div fxShow fxHide.gt-sm>
+    <button mat-icon-button type="button" (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div  fxLayout="row" [routerLink]="['/']">
+    <img src="assets/images/logo.png" class="logo-techpro">
+  </div>
+
+
+  <div fxFlex fxLayoutAlign="end center" fxHide.xs fxLayoutGap="0.5rem">
+    <div fxLayout="row" class="h-3 mr-2" fxLayoutGap="15px" fxLayoutAlign="center center">
+        <a  class="a-header"href="#intro" >Home</a>
+        <!-- <a   class="a-header" href="#about" >About Us</a> -->
+        <a   class="a-header"href="#services" >Services</a>
+        <a   class="a-header" href="/jobs" >Jobs</a>
+        <a   class="a-header"href="#contact" >Contact Us</a>
+
+      <!-- <button mat-button  [routerLink]="['/']">
+        Home
+      </button>
+      <button mat-button  [routerLink]="['/about']">
+        About us
+      </button>
+      <button mat-button  [routerLink]="['/user']">
+        Jobs
+      </button>
+      <button mat-button  [routerLink]="['/services']">
+        Services
+      </button>
+      <button mat-button  [routerLink]="['/contact']">
+        Contact us
+      </button> -->
+
+      <!-- <button mat-button  [matMenuTriggerFor]="profileMenu">
+        About us
+      </button>
+      <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item [routerLink]="['/profile']">Edit Profile</button>
+        <button mat-menu-item [routerLink]="['/settings']">Settings</button>
+        <button mat-menu-item (click)="onLogout()" [routerLink]="['/auth/login']">
+          Logout
+        </button>
+      </mat-menu> -->
+    </div>
+  </div>
+</mat-toolbar>

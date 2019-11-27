@@ -9,14 +9,10 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/modules/shared.module';
-import { HttpClientModule } from '@angular/common/http';
-import { NotfoundComponent } from './shared/components/notfound/notfound.component';
-
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NotfoundComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +20,6 @@ import { NotfoundComponent } from './shared/components/notfound/notfound.compone
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFirestoreModule,
-    HttpClientModule,
     SharedModule,
     HomeModule,
     AppRoutingModule,

@@ -7,16 +7,16 @@ import { CustomerComponent } from './components/customer/customer.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
+  // {
+  //   path: '',
+  //   component: HomeComponent
+  // },
   {
     path: 'submission',
     component: SubmissionComponent
   },
   {
-    path: 'user',
+    path: 'jobs',
     component: UserComponent
   },
   {

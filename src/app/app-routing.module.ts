@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NotfoundComponent } from './shared/components/notfound/notfound.component';
-
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { LayoutComponent } from './shared/components/layout/layout.component';
+import { HomeComponent } from './modules/home/components/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component: HomeComponent
   },
   {
     path: 'home',
-    loadChildren: 'src/app/modules/home/home.module#HomeModule'
+    component: LayoutComponent,
+    loadChildren: () => import('src/app/modules/home/home.module').then(m => m.HomeModule)
   },
   { path: '**',
-    component: NotfoundComponent
+    component: NotFoundComponent
   }
 ];
 
