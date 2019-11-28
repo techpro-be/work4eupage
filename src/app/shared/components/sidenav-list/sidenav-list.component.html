@@ -4,7 +4,7 @@
 
     <div fxLayoutAlign="center center">
        <mat-icon class="icon-sidenav">phone</mat-icon>
-       <a  class="a-sidenav"href="#intro" >Home</a>
+       <a  class="a-sidenav" [routerLink]="['/']" >Home</a>
     </div>
     <div fxLayoutAlign="center center">
         <mat-icon class="icon-sidenav">settings_applications</mat-icon>
@@ -12,7 +12,7 @@
      </div>
      <div fxLayoutAlign="center center">
         <mat-icon class="icon-sidenav">work</mat-icon>
-        <a   class="a-sidenav" href="/jobs" >Jobs</a>
+        <a   class="a-sidenav" [routerLink]="['/jobs']" >Jobs</a>
      </div>
      <div fxLayoutAlign="center center">
         <mat-icon class="icon-sidenav">chat_bubble</mat-icon>
