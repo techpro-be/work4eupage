@@ -11,10 +11,11 @@
 
   <div fxFlex fxLayoutAlign="end center" fxHide.xs fxLayoutGap="0.5rem">
     <div fxLayout="row" class="h-3 mr-2" fxLayoutGap="15px" fxLayoutAlign="center center">
-        <a  class="a-header"href="#intro" >Home</a>
+        <a  class="a-header" [routerLink]="['/']" >Home</a>
         <!-- <a   class="a-header" href="#about" >About Us</a> -->
         <a   class="a-header"href="#services" >Services</a>
-        <a   class="a-header" href="/jobs" >Jobs</a>
+        <a   class="a-header" [routerLink]="['/jobs']" >Jobs</a>
+        <a   class="a-header"href="#blog" >Blog</a>
         <a   class="a-header"href="#contact" >Contact Us</a>
 
       <!-- <button mat-button  [routerLink]="['/']">

@@ -93,7 +93,7 @@ h5,
 h6 {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-weight: 400;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 
@@ -228,6 +228,10 @@ h6 {
   background: url("src/assets/images/intro-bg.png") center bottom no-repeat;
   background-size: cover;
   padding: 200px 0 120px 0;
+}
+
+.ml-80{
+  margin-left: 80px;
 }
 
 #intro .intro-img {
@@ -630,7 +634,7 @@ h6 {
 
 #about .about-extra h4 {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 /* Services Section
@@ -985,7 +989,7 @@ h6 {
   text-align: center;
   margin-bottom: 20px;
   position: relative;
-  border-radius: 50%;
+  border-radius: 50%!important;
   overflow: hidden;
 }
 

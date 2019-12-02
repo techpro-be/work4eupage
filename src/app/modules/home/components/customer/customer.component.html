@@ -76,12 +76,25 @@
 
 
                       </div>
+
+                      <h6 class="card-title d-flex ml-1 align-items-center">
+                        Project Description</h6>
+                    <div class="form-group">
+                      <input type="text" class="form-control" [(ngModel)]="project.projectName" name="projectName" placeholder="Name of your project"
+                        #projectName="ngModel" required
+                        [ngClass]="{'is-invalid': projectName.invalid && (projectName.touched || projectForm.submitted) }">
+                    </div>
+                    <div class="form-group">
+                        <textarea  name="projectDescription" placeholder="Describe your project" type="text" class="form-control"
+                        [(ngModel)]="project.projectDescription" required
+                          rows="3"></textarea>
+                    </div>
                   </div>
 
 
                   <div class="col-md-6">
 
-                      <h6 class="card-title d-flex ml-1 align-items-center">
+                      <!-- <h6 class="card-title d-flex ml-1 align-items-center">
                           Project Description</h6>
                       <div class="form-group">
                         <input type="text" class="form-control" [(ngModel)]="project.projectName" name="projectName" placeholder="Name of your project"
@@ -92,7 +105,7 @@
                           <textarea  name="projectDescription" placeholder="Describe your project" type="text" class="form-control"
                           [(ngModel)]="project.projectDescription" required
                             rows="3"></textarea>
-                      </div>
+                      </div> -->
 
                       <h6 class="card-title d-flex ml-1 align-items-center">
                           Contact Details</h6>
