@@ -4,13 +4,11 @@ import { HomeComponent } from './components/home/home.component';
 import { SubmissionComponent } from './components/submission/submission.component';
 import { UserComponent } from './components/user/user.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { ServicesComponent } from './components/services/services.component';
 
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: HomeComponent
-  // },
   {
     path: 'submission',
     component: SubmissionComponent
@@ -20,8 +18,16 @@ const routes: Routes = [
     component: UserComponent
   },
   {
-    path: 'customer',
+    path: 'contact',
     component: CustomerComponent
+  },
+  {
+    path: 'terms',
+    component: TermsComponent
+  },
+  {
+    path: 'services',
+    component: ServicesComponent
   }
 ];
 
