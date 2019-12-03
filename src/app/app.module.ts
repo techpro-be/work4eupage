@@ -22,11 +22,10 @@ import { SharedModule } from './shared/modules/shared.module';
     AngularFirestoreModule,
     SharedModule,
     HomeModule,
-    AppRoutingModule,
-
+    AppRoutingModule
   ],
-  providers: [],   // for importing services
-  bootstrap: [AppComponent], // this is the root component of project
+  providers: [],
+  bootstrap: [AppComponent],
   entryComponents: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

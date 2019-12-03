@@ -44,7 +44,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatPaginatorModule,
     MatMenuModule,
     MatNativeDateModule,
-  MatDatepickerModule,
+    MatDatepickerModule,
     MatSnackBarModule,
     MatStepperModule
   ],
