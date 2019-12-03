@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
-import { Resume, Education, Experience, Language, itKnowledge } from '../../resume';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
@@ -13,6 +11,9 @@ import { Project } from '../../project';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  private projectCollection: AngularFirestoreCollection<Project>;
+  userProjects: Observable<Project[]>;
+
   constructor(private router: Router,
               private afs: AngularFirestore,
     ) {
@@ -21,8 +22,7 @@ export class HomeComponent implements OnInit {
       this.project = JSON.parse(sessionStorage.getItem('project')) || new Project();
 }
 
-private projectCollection: AngularFirestoreCollection<Project>;
-userProjects: Observable<Project[]>;
+
 
 project = new Project();
 
