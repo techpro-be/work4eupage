@@ -5,49 +5,38 @@
     </button>
   </div>
   <div  fxLayout="row" [routerLink]="['/']">
-    <img src="assets/images/logo.png" class="logo-techpro">
+    <img src="assets/images/logo.png" class="logo-techpro" alt="TechPro Logo">
   </div>
 
 
   <div fxFlex fxLayoutAlign="end center" fxHide.xs fxLayoutGap="0.5rem">
     <div fxLayout="row" class="h-3 mr-2" fxLayoutGap="15px" fxLayoutAlign="center center">
+
+      <!--
         <a  class="a-header" [routerLink]="['/']" >Home</a>
-        <!-- <a   class="a-header" href="#about" >About Us</a> -->
         <a   class="a-header"href="#services" >Services</a>
-<<<<<<< HEAD
         <a   class="a-header" [routerLink]="['/jobs']" >Jobs</a>
         <a   class="a-header"href="#blog" >Blog</a>
-=======
-        <a  [routerLink]="['/jobs']"  class="a-header">Jobs</a>
->>>>>>> fe414a441275e0e78fd9430d999bb5a583e39cb9
         <a   class="a-header"href="#contact" >Contact Us</a>
+      -->
 
-      <!-- <button mat-button  [routerLink]="['/']">
+      <button mat-button  class="btn-focus" [routerLink]="['/']">
         Home
       </button>
-      <button mat-button  [routerLink]="['/about']">
-        About us
-      </button>
-      <button mat-button  [routerLink]="['/user']">
-        Jobs
-      </button>
-      <button mat-button  [routerLink]="['/services']">
+      <button mat-button   class="btn-focus" [routerLink]="['/services']">
         Services
       </button>
-      <button mat-button  [routerLink]="['/contact']">
-        Contact us
-      </button> -->
-
-      <!-- <button mat-button  [matMenuTriggerFor]="profileMenu">
-        About us
+      <button mat-button   class="btn-focus" [routerLink]="['/jobs']">
+        Jobs
       </button>
-      <mat-menu #profileMenu="matMenu">
-        <button mat-menu-item [routerLink]="['/profile']">Edit Profile</button>
-        <button mat-menu-item [routerLink]="['/settings']">Settings</button>
-        <button mat-menu-item (click)="onLogout()" [routerLink]="['/auth/login']">
-          Logout
-        </button>
-      </mat-menu> -->
+      <button mat-button   class="btn-focus" [routerLink]="['/contact']">
+        Contact us
+      </button>
+      <!-- <button mat-button   class="btn-focus" [routerLink]="['/blog']">
+        Blog
+      </button> -->
+      <a   class="a-header"href="https://www.thetechpro.be/blog" target="_blank" >Blog</a>
+
     </div>
   </div>
 </mat-toolbar>

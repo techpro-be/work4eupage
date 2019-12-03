@@ -2,7 +2,7 @@
 
   <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="0.5rem" class="mt-1">
 
-    <div fxLayoutAlign="center center">
+    <!-- <div fxLayoutAlign="center center">
        <mat-icon class="icon-sidenav">phone</mat-icon>
        <a  class="a-sidenav" [routerLink]="['/']" >Home</a>
     </div>
@@ -16,14 +16,14 @@
      </div>
      <div fxLayoutAlign="center center">
         <mat-icon class="icon-sidenav">chat_bubble</mat-icon>
-        <a   class="a-sidenav"href="#contact" >Contact Us</a>
+        <a   class="a-sidenav" [routerLink]="['/contact']">Contact Us</a>
      </div>
      <div fxLayoutAlign="center center">
       <mat-icon class="icon-sidenav">fiber_new</mat-icon>
       <a   class="a-sidenav"href="#contact" >Blog</a>
-   </div>
+   </div> -->
 
-    <!-- <button
+     <button
       fxLayoutAlign="start start"
       mat-button
       class="full-width"
@@ -38,17 +38,17 @@
       mat-button
       class="full-width"
       (click)="onClose()"
-      [routerLink]="['/about']"
+      [routerLink]="['/services']"
     >
-      <mat-icon class="pr-1">description</mat-icon>
-      About us
+      <mat-icon class="pr-1">settings</mat-icon>
+      Services
     </button>
     <button
       mat-button
       fxLayoutAlign="start start"
       class="full-width"
       (click)="onClose()"
-      [routerLink]="['/user']"
+      [routerLink]="['/jobs']"
     >
       <mat-icon class="pr-1">supervisor_account</mat-icon>
       Jobs
@@ -60,8 +60,8 @@
       (click)="onClose()"
       [routerLink]="['/services']"
     >
-      <mat-icon class="pr-1">settings</mat-icon>
-      Services
+      <mat-icon class="pr-1">fiber_new</mat-icon>
+      Blog
     </button>
 
     <button
@@ -73,6 +73,6 @@
     >
       <mat-icon class="pr-1">phone</mat-icon>
       Contact us
-    </button> -->
+    </button>
   </div>
 </div>
