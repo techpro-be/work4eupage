@@ -11,7 +11,6 @@ import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/modules/shared.module';
 import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 const cookieConfig: NgcCookieConsentConfig = {
 
