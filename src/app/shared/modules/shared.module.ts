@@ -9,6 +9,9 @@ import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { SidenavListComponent } from '../components/sidenav-list/sidenav-list.component';
 import { LayoutComponent } from '../components/layout/layout.component';
+import { SubmissionComponent } from '../components/submission/submission.component';
+import { TermsComponent } from '../components/terms/terms.component';
+import { PrivacyComponent } from '../components/privacy/privacy.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -18,6 +21,9 @@ import { LayoutComponent } from '../components/layout/layout.component';
     SidenavListComponent,
     NotFoundComponent,
     LayoutComponent,
+    SubmissionComponent,
+    TermsComponent,
+    PrivacyComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +44,10 @@ import { LayoutComponent } from '../components/layout/layout.component';
     HeaderComponent,
     SidenavListComponent,
     NotFoundComponent,
-    LayoutComponent
+    LayoutComponent,
+    SubmissionComponent,
+    TermsComponent,
+    PrivacyComponent
   ]
 })
 export class SharedModule { }
