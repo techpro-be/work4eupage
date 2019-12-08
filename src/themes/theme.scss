@@ -1,13 +1,13 @@
 @import '~@angular/material/theming';
 
-html {
-  height: 100%;
-}
+// html {
+//   height: 100%;  //disabled beacause oh scroll to top
+// }
 
 body {
   padding: 0px;
   margin: 0px;
-  height: 100%;
+  // height: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -64,11 +64,6 @@ body {
 
 .pl-1 {
   padding-left: 1rem;
-}
-
-.nav-caption {
-  display: inline-block;
-  padding-left: 10px;
 }
 
 .full-width {
