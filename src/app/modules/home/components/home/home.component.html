@@ -1,5 +1,11 @@
+<button
+  [ngClass]="{'show-scroll': showScroll}"
+  (click)="scrollToTop()"
+  class="scroll-to-top">
+  <i class="fa fa-angle-double-up"></i>
+</button>  <!--scroll to top button-->
 
-  <section id="intro" class="clearfix">
+<section id="intro" class="clearfix">
       <div id="sidebar">
           <div class="social youtube">
             <a href="tel:+355692610893" target="_blank">
@@ -31,7 +37,7 @@
 
 
     </div>
-  </section>   <!--intro section-->
+</section>   <!--intro section-->
 
   <main id="main">
 
@@ -837,7 +843,7 @@
                                   [ngClass]="{'is-invalid': Email.invalid && (Email.touched || projectForm.submitted) }">
                               </div>
                               <div class="card p-4">
-                                  <mat-checkbox ngModel #termsButton="ngModel" name="termsButton"required color="warn">Agree to  <a href="https://www.thetechpro.be/terms.html" style="text-decoration: none;" target="_blank">Terms & Conditions</a></mat-checkbox>
+                                  <mat-checkbox ngModel #termsButton="ngModel" name="termsButton"required color="warn">Agree to  <a [routerLink]="['/terms']" style="text-decoration: none;" target="_blank">Terms & Conditions</a></mat-checkbox>
                                 </div>
                               <div class="shadow-sm card action-buttons">
 
@@ -923,160 +929,15 @@
     </div>
 
 
-    <!-- <div class="container">
-        <div class="first_part" style="width:80%; margin-left: 40%; position: left;">
+    <div fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div class="first_part">
             &copy; Copyright  <a class="a-footer" href="https://www.thetechpro.be/" target="_blank">TechPro</a> All Rights Reserved
-            <a href="#intro" style="margin-left: 35%;"> <mat-icon>keyboard_arrow_up</mat-icon></a>
         </div>
-    </div> -->
-
-    <div fxLayoutAlign="center center">
-      <div fxFlex="30"></div>
-         <div fxLayoutAlign="center center" fxLayout="column">
-           <div > &copy; Copyright by <a class="a-footer" href="https://www.thetechpro.be/" target="_blank"> TechPro </a> </div>
-            <div>  All Rights Reserved</div>
-          </div>
-
-
-        <div fxFlex="30"  fxLayoutAlign="end center"><a  href="intro"> <mat-icon class="back-to-top-button" >arrow_upward</mat-icon></a></div>
-
     </div>
+
+
 </footer> <!--  End of #footer -->
 
-<!-- <div fxHide fxShow.gt-sm   style="margin-bottom: 20px;">
-
-  <div class="header-work4eu">
-      <div class="header-work4eu-inner">
-          <h1 style="color: white; ">WELCOME TO TECHPRO</h1>
-          <div fxLayout="row">
-              <button  routerLink="user" mat-button class="header-button">User</button>
-              <button  routerLink="customer" mat-button class="header-button">Customer</button>
-          </div>
-
-      </div>
-
-  </div>
-</div>    -->
-<!-- Header for web-->
-
-<!-- <div fxShow.xs fxHide.gt-sm >
-    <div class="header-work4eu">
-        <div class="header-work4eu-inner">
-            <h1 style="color: white; font-size: 3em;">WELCOME TO TECHPRO</h1>
-
-            <div class="empty-div-img"></div>
-
-            <div fxLayout="column">
-              <button  routerLink="user" mat-button class="header-button">User</button>
-              <button  routerLink="customer" mat-button class="header-button">Customer</button>
-            </div>
-
-        </div>
-
-    </div>
-</div>   -->
-<!-- Header for mobile-->
-
-
-<!-- <footer class="page-footer font-small mdb-color pt-4">
-
-
-  <div class="container text-center text-md-left">
-
-
-    <div class="row text-center text-md-left mt-3 pb-3">
-
-
-      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">TechPro</h6>
-        <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!
-        </p>
-      </div>
-
-
-      <hr class="w-100 clearfix d-md-none">
-
-
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-        <p>
-          <a href="work.thetechpro.be" target="_blank">Home</a>
-        </p>
-
-        <p>
-          <a href="https://www.thetechpro.be/services.html" target="_blank">Services</a>
-        </p>
-
-      </div>
-
-
-      <hr class="w-100 clearfix d-md-none">
-
-
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-        <p>
-          <a href="https://www.thetechpro.be/index.html" target="_blank">About us</a>
-        </p>
-        <p>
-          <a href="https://www.thetechpro.be/terms.html" target="_blank">Terms & Conditions</a>
-        </p>
-        <p>
-          <a href="https://www.linkedin.com/company/techpro-be/" target="_blank">Linkedin</a>
-        </p>
-      </div>
-
-
-      <hr class="w-100 clearfix d-md-none">
-
-
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-        <p>
-          <mdb-icon fas icon="home" class="mr-3"></mdb-icon> Rr. "Andon Z. Cajupi",Nd.14, H14, Ap.1 Tirana Albania
-        </p>
-        <p>
-          <mdb-icon fas icon="envelope" class="mr-3"></mdb-icon> jobs@thetechpro.be
-        </p>
-        <p>
-          <mdb-icon fas icon="phone" class="mr-3"></mdb-icon> + 01 234 567 88
-        </p>
-        <p>
-          <mdb-icon fas icon="phone" class="mr-3"></mdb-icon> +355 44 81 3008
-        </p>
-      </div>
-
-
-    </div>
-
-
-    <hr>
-
-
-    <div fxLayoutAlign="center center">
-
-
-      <div  >
-
-
-        <p class="text-center text-md-left">© 2019 <b>TECHPRO </b>
-          <a href="https://www.thetechpro.be/" target="_blank">
-            <strong> by O.D.O. All Rights Reserved. </strong>
-          </a>
-        </p>
-
-      </div>
-
-
-
-
-    </div>
-
-
-  </div>
-
-
-</footer> -->
 
 
 

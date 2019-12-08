@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { Project } from '../../project';
+import { Project } from '../../../../shared/models/project';
 
 
 @Component({
@@ -13,17 +13,9 @@ import { Project } from '../../project';
 export class HomeComponent implements OnInit {
   private projectCollection: AngularFirestoreCollection<Project>;
   userProjects: Observable<Project[]>;
-
-  constructor(private router: Router,
-              private afs: AngularFirestore,
-    ) {
-      this.projectCollection = this.afs.collection<Project>('userProjects');
-      this.userProjects = this.projectCollection.valueChanges();
-      this.project = JSON.parse(sessionStorage.getItem('project')) || new Project();
-}
-
-
-
+  showScroll: boolean;
+  showScrollHeight = 300;
+  hideScrollHeight = 10;
 project = new Project();
 
 devCategories = [
@@ -38,18 +30,52 @@ contractTypes = [
 'Outsourcing',
 'I dont know, advise me!'
 ];
+  constructor(private router: Router,
+              private afs: AngularFirestore,
+    ) {
+      this.projectCollection = this.afs.collection<Project>('userProjects');
+      this.userProjects = this.projectCollection.valueChanges();
+      this.project = JSON.parse(sessionStorage.getItem('project')) || new Project();
+}
 
 ngOnInit() {}
 
 
+@HostListener('window:scroll', [])
+    onWindowScroll()
+    {
+      if (( window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) > this.showScrollHeight)
+      {
+        this.showScroll = true;
+      }
+      else if ( this.showScroll && (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) < this.hideScrollHeight)
+      {
+        this.showScroll = false;
+      }
+    }
+
+
+
+scrollToTop() {
+   (function smoothscroll()
+      { var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll > 0)
+        {
+          window.requestAnimationFrame(smoothscroll);
+          window.scrollTo(0, currentScroll - (currentScroll / 5));
+        }
+      })();
+  }
+
+
 submitForm() {
-const param = JSON.parse(JSON.stringify(this.project));
-this.projectCollection
-.add(param)
-.then( resp => {
-this.router.navigate(['/submission']);
-this.project = new Project();
-});
+    const param = JSON.parse(JSON.stringify(this.project));
+    this.projectCollection
+    .add(param)
+    .then( resp => {
+    this.router.navigate(['/submission']);
+    this.project = new Project();
+    });
 }
 
 }
