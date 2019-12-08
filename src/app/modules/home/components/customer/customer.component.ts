@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { MatSnackBar } from '@angular/material';
-import { Project } from '../../project';
 import { Observable } from 'rxjs';
+import { Project } from 'src/app/shared/models/project';
 
 
 @Component({
@@ -11,7 +10,9 @@ import { Observable } from 'rxjs';
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.scss']
 })
-export class CustomerComponent implements OnInit {
+export class CustomerComponent {
+  private projectCollection: AngularFirestoreCollection<Project>;
+  userProjects: Observable<Project[]>;
 
   constructor(private router: Router,
               private afs: AngularFirestore,
@@ -20,9 +21,6 @@ export class CustomerComponent implements OnInit {
                 this.userProjects = this.projectCollection.valueChanges();
                 this.project = JSON.parse(sessionStorage.getItem('project')) || new Project();
 }
-
-private projectCollection: AngularFirestoreCollection<Project>;
-userProjects: Observable<Project[]>;
 
 project = new Project();
 
@@ -34,14 +32,6 @@ devCategories = [
   'Security'
 ];
 
-contractTypes = [
-  'Outsourcing',
-  'I dont know, advise me!'
-];
-
-ngOnInit() {}
-
-
   submitForm() {
     const param = JSON.parse(JSON.stringify(this.project));
     this.projectCollection
@@ -51,9 +41,5 @@ ngOnInit() {}
       this.project = new Project();
     });
   }
-
-  // resetForm() {
-  //   this.project = new Project();
-  // }
 
 }

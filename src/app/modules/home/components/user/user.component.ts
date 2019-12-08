@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { MatSnackBar } from '@angular/material';
-import { Resume, Experience, Education, Language, itKnowledge } from '../../resume';
+import { Resume, Experience, Education, Language, itKnowledge } from '../../../../shared/models/resume';
 import { Observable } from 'rxjs';
 
 @Component({
