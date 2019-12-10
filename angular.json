@@ -34,7 +34,8 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/font-awesome/css/font-awesome.css",
               "./node_modules/cookieconsent/build/cookieconsent.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/themes/theme.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
