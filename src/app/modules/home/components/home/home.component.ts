@@ -3,8 +3,6 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Project } from 'src/app/shared/models/project';
-import { FormGroup, NgForm } from '@angular/forms';
-
 
 @Component({
   selector: 'app-home',
@@ -12,9 +10,8 @@ import { FormGroup, NgForm } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  emailForm: NgForm;
+
   private projectCollection: AngularFirestoreCollection<Project>;
-  private emailCollection: AngularFirestoreCollection<any>;
   userProjects: Observable<Project[]>;
   showScroll: boolean;
   showScrollHeight = 300;
@@ -33,11 +30,11 @@ contractTypes = [
 'Outsourcing',
 'I dont know, advise me!'
 ];
+
   constructor(private router: Router,
               private afs: AngularFirestore,
     ) {
       this.projectCollection = this.afs.collection<Project>('userProjects');
-      this.emailCollection = this.afs.collection<any>('emailNewsletter');
       this.userProjects = this.projectCollection.valueChanges();
       this.project = JSON.parse(sessionStorage.getItem('project')) || new Project();
 }
@@ -55,8 +52,6 @@ ngOnInit() {}
       }
     }
 
-
-
 scrollToTop() {
    (function smoothscroll() {
      const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -67,24 +62,13 @@ scrollToTop() {
       })();
   }
 
-
-submitForm() {
-    const param = JSON.parse(JSON.stringify(this.project));
-    this.projectCollection
-    .add(param)
-    .then( resp => {
-    this.router.navigate(['/submission']);
-    this.project = new Project();
-    });
-}
-
-onEmailSubmit(emailForm: NgForm) {
-  this.emailCollection
-    .add(emailForm.value)
-    .then( resp => {
-    emailForm.reset();
-    });
-  console.log(emailForm.value);
-}
-
+  submitForm() {
+      const param = JSON.parse(JSON.stringify(this.project));
+      this.projectCollection
+      .add(param)
+      .then( resp => {
+      this.router.navigate(['/submission']);
+      this.project = new Project();
+      });
+  }
 }

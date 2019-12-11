@@ -1,6 +1,4 @@
-import { AngularFireAuth } from '@angular/fire/auth';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-layout',

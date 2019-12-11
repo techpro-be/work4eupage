@@ -12,6 +12,7 @@ import { LayoutComponent } from '../components/layout/layout.component';
 import { SubmissionComponent } from '../components/submission/submission.component';
 import { TermsComponent } from '../components/terms/terms.component';
 import { PrivacyComponent } from '../components/privacy/privacy.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -23,7 +24,8 @@ import { PrivacyComponent } from '../components/privacy/privacy.component';
     LayoutComponent,
     SubmissionComponent,
     TermsComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,8 @@ import { PrivacyComponent } from '../components/privacy/privacy.component';
     LayoutComponent,
     SubmissionComponent,
     TermsComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
