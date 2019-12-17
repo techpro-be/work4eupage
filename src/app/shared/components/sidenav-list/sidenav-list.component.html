@@ -48,11 +48,24 @@
       fxLayoutAlign="start start"
       class="full-width"
       (click)="onClose()"
-      [routerLink]="['/jobs']"
+
     >
       <mat-icon class="pr-1">supervisor_account</mat-icon>
-      Jobs
-    </button>
+        <a   class="a-header"href="https://www.work4eu.com" target="_blank" >Jobs</a>
+
+      </button>
+
+      <button
+      mat-button
+      fxLayoutAlign="start start"
+      class="full-width"
+      (click)="onClose()"
+
+    >
+      <mat-icon class="pr-1">fiber_newt</mat-icon>
+        <a   class="a-header"href="https://www.thetechpro.be/blog" target="_blank" >Blog</a>
+
+      </button>
     <!-- <button
       mat-button
       fxLayoutAlign="start start"
@@ -64,6 +77,11 @@
       Blog
     </button> -->
 
+
+    <!-- <div fxLayoutAlign="center center">
+        <mat-icon class="icon-sidenav">fiber_new</mat-icon>
+        <a   class="a-sidenav"href="https://www.thetechpro.be/blog" >Blog</a>
+     </div> -->
     <button
       mat-button
       fxLayoutAlign="start start"
@@ -74,9 +92,6 @@
       <mat-icon class="pr-1">phone</mat-icon>
       Contact us
     </button>
-    <div fxLayoutAlign="center center">
-        <mat-icon class="icon-sidenav">fiber_new</mat-icon>
-        <a   class="a-sidenav"href="https://www.thetechpro.be/blog" >Blog</a>
-     </div>
+
   </div>
 </div>
