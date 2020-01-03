@@ -1,66 +1,91 @@
 <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-info">
+          <h3>TechPro</h3>
+          <p>
+            If you have any questions, feedback or would like to have a meeting
+            with us, please contact us. We'll get back to you asap!
+          </p>
+        </div>
 
-          <div class="col-lg-4 col-md-6 footer-info">
-            <h3>TechPro</h3>
-            <p>If you have any questions, feedback or would like to have a meeting with us, please contact us. We'll get back to you asap!</p>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <!-- <li><a [routerLink]="['/']">Home</a></li> -->
+            <li><a [routerLink]="['/jobs']">Jobs</a></li>
+            <li><a [routerLink]="['/services']">Services</a></li>
+            <li>
+              <a href="https://www.thetechpro.be/blog" target="_blank">Blog</a>
+            </li>
+            <li>
+              <a [routerLink]="['/terms']" target="_blank"
+                >Terms And Conditions</a
+              >
+            </li>
+            <li>
+              <a [routerLink]="['/privacy']" target="_blank">Privacy Policy</a>
+            </li>
+            <li>
+              <a [routerLink]="['/legal']" target="_blank">Legal Mentions</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            Wilson Square<br />
+            Olympia Centre<br />
+            Tirana Albania <br />
+            Phone: +355 69 26 10893<br />
+            Email: info@thetechpro.be<br />
+          </p>
+
+          <div class="social-links">
+            <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> -->
+            <a href="https://www.facebook.com/TechProBelgium" class="facebook"
+              ><i class="fa fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/thetechprobe" class="instagram"
+              ><i class="fa fa-instagram"></i
+            ></a>
+            <!-- <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a> -->
+            <a
+              href="https://www.linkedin.com/company/techpro-be"
+              class="linkedin"
+              ><i class="fa fa-linkedin"></i
+            ></a>
           </div>
+        </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a [routerLink]="['/']">Home</a></li>
-              <li><a [routerLink]="['/jobs']" >Jobs</a></li>
-              <li><a [routerLink]="['/services']">Services</a></li>
-              <li><a href="https://www.thetechpro.be/blog" target="_blank">Blog</a></li>
-              <li><a [routerLink]="['/terms']">Terms of service</a></li>
-              <li><a [routerLink]="['/privacy']">Privacy & Cookies</a></li>
-
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              Wilson Square<br>
-              Olympia Centre<br>
-              Tirana Albania <br>
-              Phone: +355 69 26 10893<br>
-              Email: info@thetechpro.be<br>
-            </p>
-
-            <div class="social-links">
-              <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> -->
-              <a href="https://www.facebook.com/TechProBelgium" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="https://www.instagram.com/thetechprobe" class="instagram"><i class="fa fa-instagram"></i></a>
-              <!-- <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a> -->
-              <a href="https://www.linkedin.com/company/techpro-be" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            </div>
-
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Subscribe for more information about TechPro</p>
-            <form #emailForm="ngForm" (ngSubmit)="onEmailSubmit(emailForm)">
-              <input type="email" ngModel #email="ngModel" name="email" required>
-              <input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
+        <div class="col-lg-3 col-md-6 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe for more information about TechPro</p>
+          <form #emailForm="ngForm" (ngSubmit)="onEmailSubmit(emailForm)">
+            <input
+              type="email"
+              ngModel
+              #email="ngModel"
+              name="email"
+              required
+            />
+            <input type="submit" value="Subscribe" />
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
-
-    <div  class="container" >
-        <div class="copyright">
-            &copy; Copyright  <a class="a-footer" href="https://www.thetechpro.be/" target="_blank">TechPro</a> All Rights Reserved
-        </div>
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright
+      <a class="a-footer" href="https://www.thetechpro.be/" target="_blank"
+        >TechPro</a
+      >
+      All Rights Reserved
     </div>
-
-
-</footer> <!--  End of #footer -->
+  </div>
+</footer>
+<!--  End of #footer -->
