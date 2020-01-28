@@ -4,13 +4,21 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div  fxLayout="row" [routerLink]="['/']">
-    <img src="assets/images/logo.png" class="logo-techpro" alt="TechPro Logo">
+  <div fxLayout="row" [routerLink]="['/']">
+    <img
+      src="assets/images/techprogif.gif"
+      class="logo-techpro"
+      alt="TechPro Logo"
+    />
   </div>
 
   <div fxFlex fxLayoutAlign="end center" fxHide.xs fxLayoutGap="0.5rem">
-    <div fxLayout="row" class="h-3 mr-2" fxLayoutGap="15px" fxLayoutAlign="center center">
-
+    <div
+      fxLayout="row"
+      class="h-3 mr-2"
+      fxLayoutGap="15px"
+      fxLayoutAlign="center center"
+    >
       <!--
         <a  class="a-header" [routerLink]="['/']" >Home</a>
         <a   class="a-header"href="#services" >Services</a>
@@ -19,27 +27,32 @@
         <a   class="a-header"href="#contact" >Contact Us</a>
       -->
 
-      <button mat-button  class="btn-focus" [routerLink]="['/']">
+      <button mat-button class="btn-focus" [routerLink]="['/']">
         Home
       </button>
-      <button mat-button   class="btn-focus" [routerLink]="['/services']">
+      <button mat-button class="btn-focus" [routerLink]="['/services']">
         Services
       </button>
-      <button mat-button   class="btn-focus">
-        <a   class="a-header"href="https://www.work4eu.com" target="_blank" >Jobs</a>
-             </button>
-      <button mat-button   class="btn-focus">
- <a   class="a-header"href="https://www.thetechpro.be/blog" target="_blank" >Blog</a>
+      <button mat-button class="btn-focus">
+        <a class="a-header" href="https://www.work4eu.com" target="_blank"
+          >Jobs</a
+        >
+      </button>
+      <button mat-button class="btn-focus">
+        <a
+          class="a-header"
+          href="https://www.thetechpro.be/blog"
+          target="_blank"
+          >Blog</a
+        >
       </button>
 
-      <button  mat-button   class="btn-focus" [routerLink]="['/contact']">
+      <button mat-button class="btn-focus" [routerLink]="['/contact']">
         Contact us
       </button>
       <!-- <button mat-button   class="btn-focus" [routerLink]="['/blog']">
         Blog
       </button> -->
-
-
     </div>
   </div>
 </mat-toolbar>
