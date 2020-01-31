@@ -17,7 +17,7 @@ import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 
 const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
-    domain: "https://www.thetechpro.be"
+    domain: "https://thetechpro.be"
   },
   position: "bottom-right",
   theme: "classic",
@@ -40,7 +40,7 @@ const cookieConfig: NgcCookieConsentConfig = {
     dismiss: "Got it!",
     deny: "Refuse cookies",
     link: "Learn more",
-    href: "https://www.thetechpro.be/#/privacy",
+    href: "https://thetechpro.be/#/privacy",
     policy: "Cookie Policy"
   }
 };

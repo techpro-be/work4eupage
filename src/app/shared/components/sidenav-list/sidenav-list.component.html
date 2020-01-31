@@ -1,7 +1,10 @@
 <div fxLayout="column" class=" sidenav-color mt-1">
-
-  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="0.5rem" class="mt-1">
-
+  <div
+    fxLayout="column"
+    fxLayoutAlign="start start"
+    fxLayoutGap="0.5rem"
+    class="mt-1"
+  >
     <!-- <div fxLayoutAlign="center center">
        <mat-icon class="icon-sidenav">phone</mat-icon>
        <a  class="a-sidenav" [routerLink]="['/']" >Home</a>
@@ -23,7 +26,7 @@
       <a   class="a-sidenav"href="#contact" >Blog</a>
    </div> -->
 
-     <button
+    <button
       fxLayoutAlign="start start"
       mat-button
       class="full-width"
@@ -48,24 +51,24 @@
       fxLayoutAlign="start start"
       class="full-width"
       (click)="onClose()"
-
     >
       <mat-icon class="pr-1">supervisor_account</mat-icon>
-        <a   class="a-header"href="https://www.work4eu.com" target="_blank" >Jobs</a>
+      <a class="a-header" href="https://www.work4eu.com" target="_blank"
+        >Jobs</a
+      >
+    </button>
 
-      </button>
-
-      <button
+    <button
       mat-button
       fxLayoutAlign="start start"
       class="full-width"
       (click)="onClose()"
-
     >
       <mat-icon class="pr-1">fiber_newt</mat-icon>
-        <a   class="a-header"href="https://www.thetechpro.be/blog" target="_blank" >Blog</a>
-
-      </button>
+      <a class="a-header" href="https://thetechpro.be/blog" target="_blank"
+        >Blog</a
+      >
+    </button>
     <!-- <button
       mat-button
       fxLayoutAlign="start start"
@@ -77,10 +80,9 @@
       Blog
     </button> -->
 
-
     <!-- <div fxLayoutAlign="center center">
         <mat-icon class="icon-sidenav">fiber_new</mat-icon>
-        <a   class="a-sidenav"href="https://www.thetechpro.be/blog" >Blog</a>
+        <a   class="a-sidenav"href="https://thetechpro.be/blog" >Blog</a>
      </div> -->
     <button
       mat-button
@@ -92,6 +94,5 @@
       <mat-icon class="pr-1">phone</mat-icon>
       Contact us
     </button>
-
   </div>
 </div>

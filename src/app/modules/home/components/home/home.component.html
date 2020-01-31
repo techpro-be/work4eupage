@@ -1,145 +1,174 @@
 <button
-  [ngClass]="{'show-scroll': showScroll}"
+  [ngClass]="{ 'show-scroll': showScroll }"
   (click)="scrollToTop()"
-  class="scroll-to-top">
+  class="scroll-to-top"
+>
   <i class="fa fa-angle-double-up"></i>
-</button>  <!--scroll to top button-->
+</button>
+<!--scroll to top button-->
 
 <section id="intro" class="clearfix">
-      <div id="sidebar">
-          <div class="social youtube">
-            <a href="tel:+355692610893" target="_blank">
-              <p class="p1">Contact us<i class="fa fa-phone"></i></p>
-
-            </a>
-          </div>
-          <div class="social linkedin">
-            <a href="mailto:info@thetechpro.be" target="_blank">
-              <p class="p1">Mail us<i class="fa fa-envelope"></i></p>
-            </a>
-          </div>
-        </div>
-
-    <div class="container">
-
-      <div class="intro-img">
-        <img src="assets/images/intro-img.png" alt="TechPro Introduction" class="img-fluid">
-      </div>
-
-      <div class="intro-info">
-        <h2>TECHPRO  A VIEW OUT OF THE BOX!</h2>
-        <div>
-          <a [routerLink]="['/services']" class="btn-get-started scrollto">Our Services</a>
-          <a [routerLink]="['/jobs']" class="btn-services scrollto">Apply Now</a>
-        </div>
-      </div>
-
-
-
+  <div id="sidebar">
+    <div class="social youtube">
+      <a href="tel:+355692610893" target="_blank">
+        <p class="p1">Contact us<i class="fa fa-phone"></i></p>
+      </a>
     </div>
-</section>   <!--intro section-->
+    <div class="social linkedin">
+      <a href="mailto:info@thetechpro.be" target="_blank">
+        <p class="p1">Mail us<i class="fa fa-envelope"></i></p>
+      </a>
+    </div>
+  </div>
 
-  <main id="main">
+  <div class="container">
+    <div class="intro-img">
+      <img
+        src="assets/images/intro-img.png"
+        alt="TechPro Introduction"
+        class="img-fluid"
+      />
+    </div>
 
-    <!--==========================
+    <div class="intro-info">
+      <h2>TECHPRO A VIEW OUT OF THE BOX!</h2>
+      <div>
+        <a [routerLink]="['/services']" class="btn-get-started scrollto"
+          >Our Services</a
+        >
+        <a [routerLink]="['/jobs']" class="btn-services scrollto">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!--intro section-->
+
+<main id="main">
+  <!--==========================
       About Us Section
     ============================-->
 
-    <section id="about">
-        <div class="container">
+  <section id="about">
+    <div class="container">
+      <header class="section-header">
+        <!-- <h3>About Us</h3> -->
+        <p>
+          TechPro helps you find the IT professionals you need to achieve your
+          projects. <br />Our favorite challenge is to find the right person and
+          the right solution to meet your specific needs
+        </p>
+      </header>
 
-          <header class="section-header">
-            <!-- <h3>About Us</h3> -->
-            <p>TechPro helps you find the IT professionals you need to achieve your projects. <br>Our favorite challenge is to find the right person and the right solution to meet your specific needs</p>
-          </header>
-
-          <div class="row about-container">
-
-            <div class="col-lg-6 content order-lg-1 order-2">
-              <!-- <p>
-                TechPro offers IT outsourcing services for European and American companies. 
-                We can propose single profiles or complete teams ready to manage and develop your projects. 
-                The entire process is maintained by our team using the Agile Method. We can have a team ready 
-                for you within 72 hours after informing us of your different needs. TechPro attaches great importance to 
-                communication and to the profile’s selection process in order to provide you with a high quality 
+      <div class="row about-container">
+        <div class="col-lg-6 content order-lg-1 order-2">
+          <!-- <p>
+                TechPro offers IT outsourcing services for European and American companies.
+                We can propose single profiles or complete teams ready to manage and develop your projects.
+                The entire process is maintained by our team using the Agile Method. We can have a team ready
+                for you within 72 hours after informing us of your different needs. TechPro attaches great importance to
+                communication and to the profile’s selection process in order to provide you with a high quality
                 result that will meet all your expectations.<br>
                 Here is how we proceed every demand we receive:
               </p> -->
 
+          <p>
+            TechPro is a Belgian company created in 2019 with the goal to help
+            you achieve all your IT projects. Our favorite challenge is to find
+            the right solution and the right person to meet your specific requirements.
+            Have a look at what we can do !
+          </p>
 
-              <p>
-                TechPro is a Belgian company created in 2019 with the goal to help you achieve all your IT projects. 
-                Our favorite challenge is to find the right solution and the right person to meet your specific needs. 
-                Have a look at what we can do !
-              </p>
-
-              <div class="icon-box wow fadeInUp">
-                <!-- <div class="icon"><i class="fa fa-shopping-bag"></i></div> -->
-                <h4 class="title">Plan</h4>
-                <p class="description">We collect informations about your project in order to share a perfect vision on how the job needs to be accomplished</p>
-              </div>
-
-              <div class="icon-box wow fadeInUp">
-                <h4 class="title">Analysis</h4>
-                <p class="description">We decide which team or profile fits your project and then propose them to you</p>
-              </div>
-
-              <div class="icon-box wow fadeInUp">
-                <h4 class="title">Develop</h4>
-                <p class="description">Oriented by you and lead by ours experts, our team starts working on your project immediately</p>
-              </div>
-              <div class="icon-box wow fadeInUp">
-                <h4 class="title">Test</h4>
-                <p class="description" >We perform some pre-tests of the beta version within our team before testing it on more users</p>
-              </div>
-              <div class="icon-box wow fadeInUp">
-                <h4 class="title">Delivery</h4>
-                <p class="description ">We deliver the final product</p>
-              </div>
-
-            </div>
-
-            <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp" fxLayoutAlign="center center">
-              <img src="assets/images/discussion.png" class="img-fluid" alt="People discussing">
-            </div>
+          <div class="icon-box wow fadeInUp">
+            <!-- <div class="icon"><i class="fa fa-shopping-bag"></i></div> -->
+            <h4 class="title">Plan</h4>
+            <p class="description">
+              We collect information about your project in order to share a
+              perfect vision on how the job needs to be accomplished
+            </p>
           </div>
 
-          <div class="row about-extra"fxLayoutAlign="center center">
-            <div class="col-lg-6 wow fadeInUp" >
-              <img src="assets/images/partnership.png" class="img-fluid" alt="Partnership">
-            </div>
-            <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-              <p>TechPro offers partnership services for your company. <br>
-                Sometimes your company might not have the right person to complete a project. We are there to help you.<br>
-                We’re ready to work on your projects on different stages of it, even if it is in the middle or in the last period of developing.
-              </p>
-              <div class="icon-box wow fadeInUp">
-                <h4 class="title">Plan</h4>
-                <p class="description">Recognizing the project</p>
-              </div>
-
-              <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
-                <h4 class="title">Analysis</h4>
-                <p class="description">More informations about the project</p>
-              </div>
-
-              <div class="icon-box wow fadeInUp">
-                <h4 class="title">Technologies</h4>
-                <p class="description">Team takes the mission</p>
-              </div>
-              <div class="icon-box wow fadeInUp">
-                <h4 class="title">Develop</h4>
-                <p class="description" >Working on it using th Agile Method</p>
-              </div>
-              <div class="icon-box wow fadeInUp">
-                <h4 class="title">Delivery</h4>
-                <p class="description ">Deliver the product</p>
-              </div>
-            </div>
+          <div class="icon-box wow fadeInUp">
+            <h4 class="title">Analysis</h4>
+            <p class="description">
+              We decide which team or profile fits your project and then propose
+              them to you
+            </p>
           </div>
 
+          <div class="icon-box wow fadeInUp">
+            <h4 class="title">Develop</h4>
+            <p class="description">
+              Oriented by you and lead by our experts, our team starts working
+              on your project immediately
+            </p>
+          </div>
+          <div class="icon-box wow fadeInUp">
+            <h4 class="title">Test</h4>
+            <p class="description">
+              We perform some pre-tests of the beta version within our team
+              before testing it on more users
+            </p>
+          </div>
+          <div class="icon-box wow fadeInUp">
+            <h4 class="title">Delivery</h4>
+            <p class="description ">We deliver the final product</p>
+          </div>
+        </div>
 
-          <!-- <div class="row about-extra">
+        <div
+          class="col-lg-6 background order-lg-2 order-1 wow fadeInUp"
+          fxLayoutAlign="center center"
+        >
+          <img
+            src="assets/images/discussion.png"
+            class="img-fluid"
+            alt="People discussing"
+          />
+        </div>
+      </div>
+
+      <div class="row about-extra" fxLayoutAlign="center center">
+        <div class="col-lg-6 wow fadeInUp">
+          <img
+            src="assets/images/partnership.png"
+            class="img-fluid"
+            alt="Partnership"
+          />
+        </div>
+        <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+          <p>
+            TechPro offers partnership services for your company. <br />
+            Sometimes your company might not have the right person to complete a
+            project. We are there to help you.<br />
+            We’re ready to work on your projects on different stages of it, even
+            if it is in the middle or in the last period of development.
+          </p>
+          <div class="icon-box wow fadeInUp">
+            <h4 class="title">Plan</h4>
+            <p class="description">Recognizing the project</p>
+          </div>
+
+          <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+            <h4 class="title">Analysis</h4>
+            <p class="description">More information about the project</p>
+          </div>
+
+          <div class="icon-box wow fadeInUp">
+            <h4 class="title">Technologies</h4>
+            <p class="description">The team takes the mission</p>
+          </div>
+          <div class="icon-box wow fadeInUp">
+            <h4 class="title">Develop</h4>
+            <p class="description">Working on it using the Agile Method</p>
+          </div>
+          <div class="icon-box wow fadeInUp">
+            <h4 class="title">Delivery</h4>
+            <p class="description ">Deliver the product</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="row about-extra">
             <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
               <img src="img/about-extra-2.svg" class="img-fluid" alt="">
             </div>
@@ -158,59 +187,88 @@
             </div>
 
           </div> -->
+    </div>
+  </section>
+  <!-- end of #about -->
 
-        </div>
-      </section> <!-- end of #about -->
-
-
-    <!--==========================
+  <!--==========================
       Services Section
     ============================-->
 
-    <section id="services" class="section-bg">
-      <div class="container">
+  <section id="services" class="section-bg">
+    <div class="container">
+      <header class="section-header">
+        <h3>Services</h3>
+        <p>
+          We treat your project as if it was ours, and we offer top quality
+          results for a very competitive price
+        </p>
+      </header>
 
-        <header class="section-header">
-          <h3>Services</h3>
-          <p>We treat your project as if it was ours, and we offer top quality results for a very competitive price</p>
-        </header>
-
-        <div class="row">
-
-          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
-              <h4 class="title">Outsourcing</h4>
-              <p class="description">TechPro offers outsourcing and offshoring IT services with European standarts and quality for your company.</p>
+      <div class="row">
+        <div
+          class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
+          data-wow-duration="1.4s"
+        >
+          <div class="box">
+            <div class="icon">
+              <i class="ion-ios-analytics-outline" style="color: #ff689b;"></i>
             </div>
+            <h4 class="title">Outsourcing</h4>
+            <p class="description">
+              TechPro offers outsourcing and offshoring IT services with
+              European standards and quality for your company.
+            </p>
           </div>
-          <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><i class="ion-ios-bookmarks-outline" style="color: #e9bf06;"></i></div>
-              <h4 class="title">Apps & website development</h4>
-              <p class="description">TechPro offers website and web-application development, mobile application development and custom software solutions.
-              </p>
+        </div>
+        <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
+          <div class="box">
+            <div class="icon">
+              <i class="ion-ios-bookmarks-outline" style="color: #e9bf06;"></i>
             </div>
+            <h4 class="title">Apps & website development</h4>
+            <p class="description">
+              TechPro offers website and web application development, mobile
+              application development and custom software solutions.
+            </p>
           </div>
+        </div>
 
-           <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
-              <h4 class="title">Creative design</h4>
-              <p class="description">TechPro offers websites, apps, logos, advertising campaigns,digital and printed advertisements design for your company. </p>
+        <div
+          class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
+          data-wow-delay="0.1s"
+          data-wow-duration="1.4s"
+        >
+          <div class="box">
+            <div class="icon">
+              <i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i>
             </div>
+            <h4 class="title">Creative design</h4>
+            <p class="description">
+              TechPro offers websites, apps, logos, advertising
+              campaigns, digital and printed advertisements design for your
+              company.
+            </p>
           </div>
-          <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><i class="ion-ios-speedometer-outline" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Digital marketing</a></h4>
-              <p class="description">
-                TechPro offers construction of CMS digital platforms, social media management, marketing on social networks and google Ads.
-              </p>
+        </div>
+        <div
+          class="col-md-6 col-lg-5 wow bounceInUp"
+          data-wow-delay="0.1s"
+          data-wow-duration="1.4s"
+        >
+          <div class="box">
+            <div class="icon">
+              <i class="ion-ios-speedometer-outline" style="color:#41cf2e;"></i>
             </div>
+            <h4 class="title"><a href="">Digital marketing</a></h4>
+            <p class="description">
+              TechPro offers construction of CMS digital platforms, social media
+              management, marketing on social networks and google Ads.
+            </p>
           </div>
+        </div>
 
-          <!--
+        <!--
           <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
             <div class="box">
               <div class="icon"><i class="ion-ios-world-outline" style="color: #d6ff22;"></i></div>
@@ -224,17 +282,17 @@
               <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
               <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
             </div>
-          </div> -->   <!-- services we can add later-->
-
-        </div>
-
+          </div> -->
+        <!-- services we can add later-->
       </div>
-    </section><!-- #services -->
+    </div>
+  </section>
+  <!-- #services -->
 
-    <!--==========================
+  <!--==========================
       Why Us Section
     ============================-->
-    <!-- <section id="why-us" class="wow fadeIn">
+  <!-- <section id="why-us" class="wow fadeIn">
       <div class="container">
         <header class="section-header">
           <h3>Why choose us?</h3>
@@ -305,10 +363,10 @@
       </div>
     </section> -->
 
-    <!--==========================
+  <!--==========================
       Portfolio Section
     ============================-->
-    <!-- <section id="portfolio" class="clearfix">
+  <!-- <section id="portfolio" class="clearfix">
       <div class="container">
 
         <header class="section-header">
@@ -459,10 +517,10 @@
       </div>
     </section>#portfolio -->
 
-    <!--==========================
+  <!--==========================
       Clients Section
     ============================-->
-    <!-- <section id="testimonials" class="section-bg">
+  <!-- <section id="testimonials" class="section-bg">
       <div class="container">
 
         <header class="section-header">
@@ -528,10 +586,10 @@
       </div>
     </section> #testimonials -->
 
-     <!--==========================
+  <!--==========================
       Team Section
     ============================-->
-     <!-- <section id="team">
+  <!-- <section id="team">
         <div class="container">
           <div class="section-header">
             <h3>Team</h3>
@@ -547,7 +605,7 @@
                 <div class="member-info-content">
                   <h4>Alex</h4>
                   <span>CEO</span>
-              
+
                 </div>
               </div>
             </div>
@@ -621,7 +679,7 @@
                   <div class="member-info-content">
                     <h4>Alex</h4>
                     <span>CEO</span>
-            
+
                   </div>
                 </div>
               </div>
@@ -690,10 +748,10 @@
         </div>
       </section>  -->
 
-    <!--==========================
+  <!--==========================
       Clients Section
     ============================-->
-    <!-- <section id="clients" class="section-bg">
+  <!-- <section id="clients" class="section-bg">
 
       <div class="container">
 
@@ -726,44 +784,56 @@
 
     </section> -->
 
-    <!--==========================
+  <!--==========================
       Contact Section
     ============================-->
-    <section id="contact">
-      <div class="section-header">
-          <h3>Contact Us</h3>
-        </div>
-        <div class="container-fluid">
-            <form #projectForm="ngForm">
-              <div class="row" fxLayoutAlign="center center">
-
-                <div class="col-md-8">
-
-                    <!-- Personal details -->
-                    <div class="shadow-sm card">
-                      <div class="card-body">
-                        <!-- <h4 class="card-title d-flex ml-1 align-items-center">
+  <section id="contact">
+    <div class="section-header">
+      <h3>Contact Us</h3>
+    </div>
+    <div class="container-fluid">
+      <form #projectForm="ngForm">
+        <div class="row" fxLayoutAlign="center center">
+          <div class="col-md-8">
+            <!-- Personal details -->
+            <div class="shadow-sm card">
+              <div class="card-body">
+                <!-- <h4 class="card-title d-flex ml-1 align-items-center">
                           Reach out to us, <br>
                         Describe your project</h4> -->
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <h6 class="card-title d-flex ml-1 align-items-center">
-                                    Choose a development category</h6>
-                              <!-- <input type="text" class="form-control" [(ngModel)]="project.devCategory" name="devCategory" placeholder="Name of your project"
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <h6 class="card-title d-flex ml-1 align-items-center">
+                        Choose a development category
+                      </h6>
+                      <!-- <input type="text" class="form-control" [(ngModel)]="project.devCategory" name="devCategory" placeholder="Name of your project"
                                 #devCategory="ngModel" required
                                 [ngClass]="{'is-invalid': devCategory.invalid && (devCategory.touched || projectForm.submitted) }"> -->
 
-                                <select class="form-control"  name="devCategory" [(ngModel)]="project.devCategory"
-                                  #devCategory="ngModel" required
-                                  [ngClass]="{'is-invalid': devCategory.invalid && (devCategory.touched || projectForm.submitted) }">
-                                  <option value="" disabled>Select category</option>
-                                  <option  placeholder="Position" [value]="devCategory" *ngFor="let devCategory of devCategories">{{devCategory}}</option>
-                                </select>
-                            </div>
+                      <select
+                        class="form-control"
+                        name="devCategory"
+                        [(ngModel)]="project.devCategory"
+                        #devCategory="ngModel"
+                        required
+                        [ngClass]="{
+                          'is-invalid':
+                            devCategory.invalid &&
+                            (devCategory.touched || projectForm.submitted)
+                        }"
+                      >
+                        <option value="" disabled>Select category</option>
+                        <option
+                          placeholder="Position"
+                          [value]="devCategory"
+                          *ngFor="let devCategory of devCategories"
+                          >{{ devCategory }}</option
+                        >
+                      </select>
+                    </div>
 
-
-                            <!-- <h6 class="card-title d-flex ml-1 align-items-center">
+                    <!-- <h6 class="card-title d-flex ml-1 align-items-center">
                                     Choose the type of contract</h6>
                             <div class="form-group d-flex" fxLayoutGap="20px">
 
@@ -775,9 +845,8 @@
                               </div>
 
                             </div> -->
-                            <div class="form-group d-flex"  fxLayoutGap="20px">
-
-                                <!-- <div>
+                    <div class="form-group d-flex" fxLayoutGap="20px">
+                      <!-- <div>
                                   <mat-checkbox>Check me!</mat-checkbox>
                                 </div>
                                 <div>
@@ -786,27 +855,41 @@
                                   <div>
                                       <mat-checkbox>I dont know, advise me!</mat-checkbox>
                                   </div> -->
+                    </div>
+                    <h6 class="card-title d-flex ml-1 align-items-center">
+                      Project Description
+                    </h6>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="project.projectName"
+                        name="projectName"
+                        placeholder="Name of your project"
+                        #projectName="ngModel"
+                        required
+                        [ngClass]="{
+                          'is-invalid':
+                            projectName.invalid &&
+                            (projectName.touched || projectForm.submitted)
+                        }"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <textarea
+                        name="projectDescription"
+                        placeholder="Describe your project"
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="project.projectDescription"
+                        required
+                        rows="3"
+                      ></textarea>
+                    </div>
+                  </div>
 
-
-                              </div>
-                              <h6 class="card-title d-flex ml-1 align-items-center">
-                                Project Description</h6>
-                            <div class="form-group">
-                              <input type="text" class="form-control" [(ngModel)]="project.projectName" name="projectName" placeholder="Name of your project"
-                                #projectName="ngModel" required
-                                [ngClass]="{'is-invalid': projectName.invalid && (projectName.touched || projectForm.submitted) }">
-                            </div>
-                            <div class="form-group">
-                                <textarea  name="projectDescription" placeholder="Describe your project" type="text" class="form-control"
-                                [(ngModel)]="project.projectDescription" required
-                                  rows="3"></textarea>
-                            </div>
-                          </div>
-
-
-                          <div class="col-md-6">
-
-                              <!-- <h6 class="card-title d-flex ml-1 align-items-center">
+                  <div class="col-md-6">
+                    <!-- <h6 class="card-title d-flex ml-1 align-items-center">
                                   Project Description</h6>
                               <div class="form-group">
                                 <input type="text" class="form-control" [(ngModel)]="project.projectName" name="projectName" placeholder="Name of your project"
@@ -819,54 +902,117 @@
                                     rows="3"></textarea>
                               </div> -->
 
-                              <h6 class="card-title d-flex ml-1 align-items-center">
-                                  Contact Details</h6>
-                              <div class="form-group">
-                                <input type="text" class="form-control" [(ngModel)]="project.name" name="name" placeholder="First Name"
-                                  #Name="ngModel" required
-                                  [ngClass]="{'is-invalid': Name.invalid && (Name.touched || projectForm.submitted) }">
-                              </div>
-                              <div class="form-group">
-                                  <input type="text" class="form-control" [(ngModel)]="project.surname" name="surname" placeholder="Last Name"
-                                  #Surname="ngModel" required
-                                  [ngClass]="{'is-invalid': Surname.invalid && (Surname.touched || projectForm.submitted) }">
-                              </div>
-                              <div class="form-group">
-                                  <input type="text" class="form-control" [(ngModel)]="project.phone" name="phone" placeholder="Phone"
-                                  #Phone="ngModel" required
-                                  [ngClass]="{'is-invalid': Phone.invalid && (Phone.touched || projectForm.submitted) }">
-                              </div>
-                              <div class="form-group">
-                                  <input type="text" class="form-control" [(ngModel)]="project.email" name="email" placeholder="Email"
-                                  #Email="ngModel" required
-                                  [ngClass]="{'is-invalid': Email.invalid && (Email.touched || projectForm.submitted) }">
-                              </div>
-                              <div class="card p-4">
-                                  <mat-checkbox ngModel #termsButton="ngModel" name="termsButton"required color="warn">Agree to  <a [routerLink]="['/terms']" style="text-decoration: none;" target="_blank">Terms & Conditions</a></mat-checkbox>
-                                </div>
-                              <div class="shadow-sm card action-buttons">
-
-                                  <button type="submit" [disabled]="!projectForm.valid" (click)="submitForm()"
-                                    class="btn btn-primary  d-flex  align-items-center justify-content-center">
-                                    <i class="material-icons">
-                                        save_alt
-                                    </i> <span>Submit</span>
-                                  </button>
-                                  <!-- <button type='reset' (click)="resetForm()"
+                    <h6 class="card-title d-flex ml-1 align-items-center">
+                      Contact Details
+                    </h6>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="project.name"
+                        name="name"
+                        placeholder="First Name"
+                        #Name="ngModel"
+                        required
+                        [ngClass]="{
+                          'is-invalid':
+                            Name.invalid &&
+                            (Name.touched || projectForm.submitted)
+                        }"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="project.surname"
+                        name="surname"
+                        placeholder="Last Name"
+                        #Surname="ngModel"
+                        required
+                        [ngClass]="{
+                          'is-invalid':
+                            Surname.invalid &&
+                            (Surname.touched || projectForm.submitted)
+                        }"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="project.phone"
+                        name="phone"
+                        placeholder="Phone"
+                        #Phone="ngModel"
+                        required
+                        [ngClass]="{
+                          'is-invalid':
+                            Phone.invalid &&
+                            (Phone.touched || projectForm.submitted)
+                        }"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="project.email"
+                        name="email"
+                        placeholder="Email"
+                        #Email="ngModel"
+                        required
+                        [ngClass]="{
+                          'is-invalid':
+                            Email.invalid &&
+                            (Email.touched || projectForm.submitted)
+                        }"
+                      />
+                    </div>
+                    <div class="card p-4">
+                      <mat-checkbox
+                        ngModel
+                        #termsButton="ngModel"
+                        name="termsButton"
+                        required
+                        color="warn"
+                        >Agree to
+                        <a
+                          [routerLink]="['/terms']"
+                          style="text-decoration: none;"
+                          target="_blank"
+                          >Terms & Conditions</a
+                        ></mat-checkbox
+                      >
+                    </div>
+                    <div class="shadow-sm card action-buttons">
+                      <button
+                        type="submit"
+                        [disabled]="!projectForm.valid"
+                        (click)="submitForm()"
+                        class="btn btn-primary  d-flex  align-items-center justify-content-center"
+                      >
+                        <i class="material-icons">
+                          save_alt
+                        </i>
+                        <span>Submit</span>
+                      </button>
+                      <!-- <button type='reset' (click)="resetForm()"
                                     class="btn btn-primary  button-color-yellow d-flex align-items-center justify-content-center">
                                     <i class="material-icons">
                                         clear_all
                                     </i><span>Reset</span>
                                   </button> -->
-                                </div>
-                            </div>
-                        </div>
-                      </div>
                     </div>
-                </div>  <!--End of details column-->
+                  </div>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
-    </section> <!--End of #contact -->
-
-  </main>
+          <!--End of details column-->
+        </div>
+      </form>
+    </div>
+  </section>
+  <!--End of #contact -->
+</main>
