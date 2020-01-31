@@ -25,6 +25,7 @@
     "@angular/router": "^8.2.14",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.4.1",
+    "caniuse-lite": "^1.0.30001023",
     "cookieconsent": "^3.1.1",
     "firebase": "^7.6.2",
     "font-awesome": "^4.7.0",
